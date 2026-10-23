@@ -1,0 +1,48 @@
+{
+  "created_users": [
+    "labAdmin",
+    "libReader",
+    "libWriter"
+  ],
+  "password_mode": "本次自动化验收使用随机密码，交互式创建脚本为 scripts/create_users.js",
+  "port": 27017,
+  "auth": true,
+  "anonymous_read": {
+    "code": 13,
+    "denied": true
+  },
+  "reader_read_count": 20,
+  "reader_write": {
+    "code": 13,
+    "denied": true
+  },
+  "writer_write": {
+    "acknowledged": true
+  },
+  "users": [
+    {
+      "user": "libReader",
+      "db": "library",
+      "roles": [
+        {
+          "role": "read",
+          "db": "library"
+        }
+      ]
+    },
+    {
+      "user": "libWriter",
+      "db": "library",
+      "roles": [
+        {
+          "role": "readWrite",
+          "db": "library"
+        },
+        {
+          "role": "dbAdmin",
+          "db": "library"
+        }
+      ]
+    }
+  ]
+}

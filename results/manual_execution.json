@@ -1,0 +1,852 @@
+[
+  {
+    "name": "数据库创建与查看",
+    "command": "use chapter3_drop_demo; show dbs",
+    "result": [
+      "admin",
+      "chapter3_drop_demo",
+      "config",
+      "library",
+      "local"
+    ]
+  },
+  {
+    "name": "删除刚创建的演示数据库",
+    "command": "db.getSiblingDB('chapter3_drop_demo').dropDatabase()",
+    "result": {
+      "dropped": true
+    }
+  },
+  {
+    "name": "特殊集合",
+    "command": "db.getCollectionInfos()",
+    "result": [
+      {
+        "name": "system.views",
+        "type": "collection",
+        "options": {},
+        "info": {
+          "readOnly": false,
+          "uuid": {
+            "$binary": {
+              "base64": "DNT2bcOzSt+9/mDqbkFhvQ==",
+              "subType": "04"
+            }
+          }
+        },
+        "idIndex": {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        }
+      },
+      {
+        "name": "cappedCollection",
+        "type": "collection",
+        "options": {
+          "capped": true,
+          "size": 5242880,
+          "max": 5000
+        },
+        "info": {
+          "readOnly": false,
+          "uuid": {
+            "$binary": {
+              "base64": "OKmSKCCHTFa88pw6a8s66g==",
+              "subType": "04"
+            }
+          }
+        },
+        "idIndex": {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        }
+      },
+      {
+        "name": "baseCollection",
+        "type": "collection",
+        "options": {},
+        "info": {
+          "readOnly": false,
+          "uuid": {
+            "$binary": {
+              "base64": "WUFYLh00Qm6dBIxnJi0DzQ==",
+              "subType": "04"
+            }
+          }
+        },
+        "idIndex": {
+          "v": 2,
+          "key": {
+            "_id": 1
+          },
+          "name": "_id_"
+        }
+      },
+      {
+        "name": "clusteredCollection",
+        "type": "collection",
+        "options": {
+          "clusteredIndex": {
+            "v": 2,
+            "key": {
+              "_id": 1
+            },
+            "name": "_id_",
+            "unique": true
+          }
+        },
+        "info": {
+          "readOnly": false,
+          "uuid": {
+            "$binary": {
+              "base64": "4hDFQK0QQseEGqgXLFqoDw==",
+              "subType": "04"
+            }
+          }
+        }
+      },
+      {
+        "name": "weather24h",
+        "type": "timeseries",
+        "options": {
+          "expireAfterSeconds": 86400,
+          "timeseries": {
+            "timeField": "timestamp",
+            "metaField": "sensorId",
+            "granularity": "hours",
+            "bucketMaxSpanSeconds": 2592000
+          }
+        },
+        "info": {
+          "readOnly": false
+        }
+      },
+      {
+        "name": "system.buckets.weather24h",
+        "type": "collection",
+        "options": {
+          "validator": {
+            "$jsonSchema": {
+              "bsonType": "object",
+              "required": [
+                "_id",
+                "control",
+                "data"
+              ],
+              "properties": {
+                "_id": {
+                  "bsonType": "objectId"
+                },
+                "control": {
+                  "bsonType": "object",
+                  "required": [
+                    "version",
+                    "min",
+                    "max"
+                  ],
+                  "properties": {
+                    "version": {
+                      "bsonType": "number"
+                    },
+                    "min": {
+                      "bsonType": "object",
+                      "required": [
+                        "timestamp"
+                      ],
+                      "properties": {
+                        "timestamp": {
+                          "bsonType": "date"
+                        }
+                      }
+                    },
+                    "max": {
+                      "bsonType": "object",
+                      "required": [
+                        "timestamp"
+                      ],
+                      "properties": {
+                        "timestamp": {
+                          "bsonType": "date"
+                        }
+                      }
+                    },
+                    "closed": {
+                      "bsonType": "bool"
+                    },
+                    "count": {
+                      "bsonType": "number",
+                      "minimum": 1
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "data": {
+                  "bsonType": "object"
+                },
+                "meta": {}
+              },
+              "additionalProperties": false
+            }
+          },
+          "clusteredIndex": true,
+          "expireAfterSeconds": 86400,
+          "timeseries": {
+            "timeField": "timestamp",
+            "metaField": "sensorId",
+            "granularity": "hours",
+            "bucketMaxSpanSeconds": 2592000
+          }
+        },
+        "info": {
+          "readOnly": false,
+          "uuid": {
+            "$binary": {
+              "base64": "7wEe/EW0St62fpfG1ZadEQ==",
+              "subType": "04"
+            }
+          }
+        }
+      },
+      {
+        "name": "myView",
+        "type": "view",
+        "options": {
+          "viewOn": "users",
+          "pipeline": [
+            {
+              "$match": {
+                "age": {
+                  "$gte": 28
+                }
+              }
+            }
+          ]
+        },
+        "info": {
+          "readOnly": true
+        }
+      }
+    ]
+  },
+  {
+    "name": "集合大小",
+    "command": "db.baseCollection.dataSize()",
+    "result": 0
+  },
+  {
+    "name": "insertOne 与 insertMany",
+    "command": "db.users.insertOne(...);db.users.insertMany([...])",
+    "result": {
+      "inserted_id": 1,
+      "inserted_many": 6
+    }
+  },
+  {
+    "name": "查询01",
+    "command": "db.users.find({\"age\": {\"$gt\": 29}}).toArray()",
+    "result": {
+      "count": 3,
+      "rows": [
+        {
+          "username": "追梦赤子心",
+          "age": 30
+        },
+        {
+          "username": "星空下的吉他",
+          "age": 30
+        },
+        {
+          "username": "旅行摄影师",
+          "age": 35
+        }
+      ]
+    }
+  },
+  {
+    "name": "查询02",
+    "command": "db.users.find({\"age\": {\"$lt\": 29}}).toArray()",
+    "result": {
+      "count": 4,
+      "rows": [
+        {
+          "username": "美食探索家",
+          "age": 28
+        },
+        {
+          "username": "代码诗人",
+          "age": 22
+        },
+        {
+          "username": "手工达人",
+          "age": 27
+        },
+        {
+          "username": "运动爱好者",
+          "age": 24
+        }
+      ]
+    }
+  },
+  {
+    "name": "查询03",
+    "command": "db.users.find({\"age\": {\"$gte\": 28}}).toArray()",
+    "result": {
+      "count": 4,
+      "rows": [
+        {
+          "username": "追梦赤子心",
+          "age": 30
+        },
+        {
+          "username": "星空下的吉他",
+          "age": 30
+        },
+        {
+          "username": "美食探索家",
+          "age": 28
+        },
+        {
+          "username": "旅行摄影师",
+          "age": 35
+        }
+      ]
+    }
+  },
+  {
+    "name": "查询04",
+    "command": "db.users.find({\"age\": {\"$lte\": 28}}).toArray()",
+    "result": {
+      "count": 4,
+      "rows": [
+        {
+          "username": "美食探索家",
+          "age": 28
+        },
+        {
+          "username": "代码诗人",
+          "age": 22
+        },
+        {
+          "username": "手工达人",
+          "age": 27
+        },
+        {
+          "username": "运动爱好者",
+          "age": 24
+        }
+      ]
+    }
+  },
+  {
+    "name": "查询05",
+    "command": "db.users.find({\"signature\": {\"$eq\": null}}).toArray()",
+    "result": {
+      "count": 1,
+      "rows": [
+        {
+          "username": "运动爱好者",
+          "age": 24
+        }
+      ]
+    }
+  },
+  {
+    "name": "查询06",
+    "command": "db.users.find({\"is_active\": {\"$ne\": true}}).toArray()",
+    "result": {
+      "count": 3,
+      "rows": [
+        {
+          "username": "星空下的吉他",
+          "age": 30
+        },
+        {
+          "username": "美食探索家",
+          "age": 28
+        },
+        {
+          "username": "运动爱好者",
+          "age": 24
+        }
+      ]
+    }
+  },
+  {
+    "name": "查询07",
+    "command": "db.users.find({\"address.province\": {\"$in\": [\"四川省\", \"云南省\"]}}).toArray()",
+    "result": {
+      "count": 2,
+      "rows": [
+        {
+          "username": "美食探索家",
+          "age": 28
+        },
+        {
+          "username": "旅行摄影师",
+          "age": 35
+        }
+      ]
+    }
+  },
+  {
+    "name": "查询08",
+    "command": "db.users.find({\"address.province\": {\"$nin\": [\"四川省\", \"云南省\"]}}).toArray()",
+    "result": {
+      "count": 5,
+      "rows": [
+        {
+          "username": "追梦赤子心",
+          "age": 30
+        },
+        {
+          "username": "星空下的吉他",
+          "age": 30
+        },
+        {
+          "username": "代码诗人",
+          "age": 22
+        },
+        {
+          "username": "手工达人",
+          "age": 27
+        },
+        {
+          "username": "运动爱好者",
+          "age": 24
+        }
+      ]
+    }
+  },
+  {
+    "name": "查询09",
+    "command": "db.users.find({\"$and\": [{\"age\": {\"$gt\": 25}}, {\"age\": {\"$lt\": 30}}]}).toArray()",
+    "result": {
+      "count": 2,
+      "rows": [
+        {
+          "username": "美食探索家",
+          "age": 28
+        },
+        {
+          "username": "手工达人",
+          "age": 27
+        }
+      ]
+    }
+  },
+  {
+    "name": "查询10",
+    "command": "db.users.find({\"$or\": [{\"age\": {\"$lt\": 28}}, {\"age\": {\"$gt\": 30}}]}).toArray()",
+    "result": {
+      "count": 4,
+      "rows": [
+        {
+          "username": "代码诗人",
+          "age": 22
+        },
+        {
+          "username": "旅行摄影师",
+          "age": 35
+        },
+        {
+          "username": "手工达人",
+          "age": 27
+        },
+        {
+          "username": "运动爱好者",
+          "age": 24
+        }
+      ]
+    }
+  },
+  {
+    "name": "查询11",
+    "command": "db.users.find({\"signature\": {\"$regex\": \"心\"}}).toArray()",
+    "result": {
+      "count": 3,
+      "rows": [
+        {
+          "username": "代码诗人",
+          "age": 22
+        },
+        {
+          "username": "旅行摄影师",
+          "age": 35
+        },
+        {
+          "username": "手工达人",
+          "age": 27
+        }
+      ]
+    }
+  },
+  {
+    "name": "查询12",
+    "command": "db.users.find({\"interests\": {\"$all\": [\"旅行\", \"读书\"]}}).toArray()",
+    "result": {
+      "count": 1,
+      "rows": [
+        {
+          "username": "追梦赤子心",
+          "age": 30
+        }
+      ]
+    }
+  },
+  {
+    "name": "查询13",
+    "command": "db.users.find({\"interests\": {\"$size\": 2}}).toArray()",
+    "result": {
+      "count": 3,
+      "rows": [
+        {
+          "username": "星空下的吉他",
+          "age": 30
+        },
+        {
+          "username": "美食探索家",
+          "age": 28
+        },
+        {
+          "username": "代码诗人",
+          "age": 22
+        }
+      ]
+    }
+  },
+  {
+    "name": "查询14",
+    "command": "db.users.find({\"_id\": {\"$type\": \"int\"}}).toArray()",
+    "result": {
+      "count": 1,
+      "rows": [
+        {
+          "username": "追梦赤子心",
+          "age": 30
+        }
+      ]
+    }
+  },
+  {
+    "name": "查询15",
+    "command": "db.users.find({\"badges\": {\"$exists\": true}}).toArray()",
+    "result": {
+      "count": 1,
+      "rows": [
+        {
+          "username": "美食探索家",
+          "age": 28
+        }
+      ]
+    }
+  },
+  {
+    "name": "查询16",
+    "command": "db.users.find({\"is_active\": {\"$eq\": \"false\"}}).toArray()",
+    "result": {
+      "count": 0,
+      "rows": []
+    }
+  },
+  {
+    "name": "查询17",
+    "command": "db.users.find({\"age\": {\"$gte\": 99}}).toArray()",
+    "result": {
+      "count": 0,
+      "rows": []
+    }
+  },
+  {
+    "name": "排序前3",
+    "command": "db.users.find().sort({age:-1,username:1}).limit(3)",
+    "result": [
+      {
+        "username": "旅行摄影师",
+        "age": 35
+      },
+      {
+        "username": "星空下的吉他",
+        "age": 30
+      },
+      {
+        "username": "追梦赤子心",
+        "age": 30
+      }
+    ]
+  },
+  {
+    "name": "年龄去重",
+    "command": "db.users.distinct('age')",
+    "result": [
+      22,
+      24,
+      27,
+      28,
+      30,
+      35
+    ]
+  },
+  {
+    "name": "find_one 与 count_documents",
+    "command": "db.users.findOne({_id:1});db.users.countDocuments({})",
+    "result": {
+      "first": {
+        "_id": 1,
+        "username": "追梦赤子心",
+        "email": "zmczx@example.com",
+        "age": 30,
+        "is_active": true,
+        "address": {
+          "province": "山东省",
+          "city": "青岛市",
+          "district": "崂山区"
+        },
+        "interests": [
+          "读书",
+          "旅行",
+          "摄影"
+        ],
+        "signature": "学而不思则罔，思而不学则殆",
+        "registration_date": {
+          "$date": "2026-10-20T14:29:39.021Z"
+        }
+      },
+      "count": 7
+    }
+  },
+  {
+    "name": "更新单条",
+    "command": "db.users.updateOne({\"_id\": 1},{\"$inc\": {\"age\": 1}, \"$currentDate\": {\"lastModified\": true}})",
+    "result": {
+      "n": 1,
+      "nModified": 1,
+      "ok": 1.0,
+      "updatedExisting": true
+    }
+  },
+  {
+    "name": "批量更新与删除字段",
+    "command": "db.users.updateMany({\"is_active\": false},{\"$set\": {\"is_active\": true}, \"$unset\": {\"badges\": \"\"}})",
+    "result": {
+      "n": 3,
+      "nModified": 3,
+      "ok": 1.0,
+      "updatedExisting": true
+    }
+  },
+  {
+    "name": "分组",
+    "command": "db.users.aggregate([{\"$group\": {\"_id\": \"$is_active\", \"count\": {\"$sum\": 1}, \"avg_age\": {\"$avg\": \"$age\"}}}])",
+    "result": [
+      {
+        "_id": true,
+        "count": 7,
+        "avg_age": 28.142857142857142
+      }
+    ]
+  },
+  {
+    "name": "sortByCount",
+    "command": "db.users.aggregate([{\"$sortByCount\": \"$address.province\"}])",
+    "result": [
+      {
+        "_id": "江苏省",
+        "count": 1
+      },
+      {
+        "_id": "北京市",
+        "count": 1
+      },
+      {
+        "_id": "浙江省",
+        "count": 1
+      },
+      {
+        "_id": "四川省",
+        "count": 1
+      },
+      {
+        "_id": "山东省",
+        "count": 1
+      },
+      {
+        "_id": "广东省",
+        "count": 1
+      },
+      {
+        "_id": "云南省",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "name": "merge",
+    "command": "db.users.aggregate([{\"$group\": {\"_id\": \"$is_active\", \"count\": {\"$sum\": 1}}}, {\"$merge\": \"user_stats\"}])",
+    "result": [
+      {
+        "_id": true,
+        "count": 7
+      }
+    ]
+  },
+  {
+    "name": "lookup",
+    "command": "db.users.aggregate([{\"$match\": {\"_id\": 1}}, {\"$lookup\": {\"from\": \"orders\", \"localField\": \"_id\", \"foreignField\": \"user_id\", \"as\": \"orders\"}}])",
+    "result": [
+      {
+        "_id": 1,
+        "username": "追梦赤子心",
+        "email": "zmczx@example.com",
+        "age": 31,
+        "is_active": true,
+        "address": {
+          "province": "山东省",
+          "city": "青岛市",
+          "district": "崂山区"
+        },
+        "interests": [
+          "读书",
+          "旅行",
+          "摄影"
+        ],
+        "signature": "学而不思则罔，思而不学则殆",
+        "registration_date": {
+          "$date": "2026-10-20T14:29:39.021Z"
+        },
+        "lastModified": {
+          "$date": "2026-10-20T14:29:39.041Z"
+        },
+        "orders": [
+          {
+            "_id": {
+              "$oid": "6ad77ad3453ea0b0087a4039"
+            },
+            "user_id": 1,
+            "amount": 99.9,
+            "date": {
+              "$date": "2024-01-01T00:00:00Z"
+            }
+          },
+          {
+            "_id": {
+              "$oid": "6ad77ad3453ea0b0087a403a"
+            },
+            "user_id": 1,
+            "amount": 20.1,
+            "date": {
+              "$date": "2024-02-01T00:00:00Z"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "unionWith",
+    "command": "db.users.aggregate([{\"$project\": {\"_id\": 0, \"username\": 1}}, {\"$unionWith\": {\"coll\": \"orders\", \"pipeline\": [{\"$project\": {\"_id\": 0, \"amount\": 1}}]}}])",
+    "result": [
+      {
+        "username": "追梦赤子心"
+      },
+      {
+        "username": "星空下的吉他"
+      },
+      {
+        "username": "美食探索家"
+      },
+      {
+        "username": "代码诗人"
+      },
+      {
+        "username": "旅行摄影师"
+      },
+      {
+        "username": "手工达人"
+      },
+      {
+        "username": "运动爱好者"
+      },
+      {
+        "amount": 99.9
+      },
+      {
+        "amount": 20.1
+      }
+    ]
+  },
+  {
+    "name": "表达式",
+    "command": "db.orders.aggregate([{\"$project\": {\"_id\": 0, \"rounded\": {\"$round\": [{\"$multiply\": [\"$amount\", 2]}, 2]}, \"year\": {\"$year\": \"$date\"}, \"date_text\": {\"$dateToString\": {\"date\": \"$date\", \"format\": \"%Y-%m-%d\"}}}}])",
+    "result": [
+      {
+        "rounded": 199.8,
+        "year": 2024,
+        "date_text": "2024-01-01"
+      },
+      {
+        "rounded": 40.2,
+        "year": 2024,
+        "date_text": "2024-02-01"
+      }
+    ]
+  },
+  {
+    "name": "单键与多键索引",
+    "command": "db.users.getIndexes()",
+    "result": [
+      {
+        "v": 2,
+        "key": {
+          "_id": 1
+        },
+        "name": "_id_"
+      },
+      {
+        "v": 2,
+        "key": {
+          "username": 1
+        },
+        "name": "username_1"
+      },
+      {
+        "v": 2,
+        "key": {
+          "interests": 1
+        },
+        "name": "interests_1"
+      }
+    ]
+  },
+  {
+    "name": "deleteOne",
+    "command": "db.users.deleteOne({username:'运动爱好者'})",
+    "result": {
+      "deleted_count": 1
+    }
+  },
+  {
+    "name": "删除预览",
+    "command": "db.users.find({age:{$lt:28}})",
+    "result": [
+      {
+        "username": "代码诗人"
+      },
+      {
+        "username": "手工达人"
+      }
+    ]
+  },
+  {
+    "name": "deleteMany",
+    "command": "db.users.deleteMany({age:{$lt:28}})",
+    "result": {
+      "deleted_count": 2
+    }
+  }
+]

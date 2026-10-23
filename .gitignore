@@ -1,0 +1,11 @@
+runtime/
+work/
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+access.local.json
+*.log
+.DS_Store
+Thumbs.db

@@ -1,0 +1,57 @@
+﻿任务一 实际服务启动日志摘录
+以下内容直接取自 mongod-auth.log；完整摘录见 server_startup.json。
+
+{"t": {"$date": "2026-10-22T09:51:48.723+08:00"}, "msg": "Waiting for connections", "port": 27017}
+{"t": {"$date": "2026-10-22T09:51:48.723+08:00"}, "msg": "mongod startup complete", "port": null}
+
+任务四 实际权限验证结果
+以下是 security.json 原始内容；不包含密码。
+
+{
+  "created_users": [
+    "labAdmin",
+    "libReader",
+    "libWriter"
+  ],
+  "password_mode": "本次自动化验收使用随机密码，交互式创建脚本为 scripts/create_users.js",
+  "port": 27017,
+  "auth": true,
+  "anonymous_read": {
+    "code": 13,
+    "denied": true
+  },
+  "reader_read_count": 20,
+  "reader_write": {
+    "code": 13,
+    "denied": true
+  },
+  "writer_write": {
+    "acknowledged": true
+  },
+  "users": [
+    {
+      "user": "libReader",
+      "db": "library",
+      "roles": [
+        {
+          "role": "read",
+          "db": "library"
+        }
+      ]
+    },
+    {
+      "user": "libWriter",
+      "db": "library",
+      "roles": [
+        {
+          "role": "readWrite",
+          "db": "library"
+        },
+        {
+          "role": "dbAdmin",
+          "db": "library"
+        }
+      ]
+    }
+  ]
+}

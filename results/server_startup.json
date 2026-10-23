@@ -1,0 +1,158 @@
+[
+  {
+    "t": {
+      "$date": "2026-10-20T22:32:33.624+08:00"
+    },
+    "s": "I",
+    "c": "NETWORK",
+    "id": 23016,
+    "ctx": "listener",
+    "msg": "Waiting for connections",
+    "attr": {
+      "port": 27017,
+      "ssl": "off"
+    }
+  },
+  {
+    "t": {
+      "$date": "2026-10-20T22:32:33.625+08:00"
+    },
+    "s": "I",
+    "c": "CONTROL",
+    "id": 8423403,
+    "ctx": "initandlisten",
+    "msg": "mongod startup complete",
+    "attr": {
+      "Summary of time elapsed": {
+        "Startup from clean shutdown?": true,
+        "Statistics": {
+          "Set up periodic runner": "0 ms",
+          "Set up online certificate status protocol manager": "1 ms",
+          "Transport layer setup": "0 ms",
+          "Run initial syncer crash recovery": "0 ms",
+          "Create storage engine lock file in the data directory": "0 ms",
+          "Get metadata describing storage engine": "0 ms",
+          "Validate options in metadata against current startup options": "0 ms",
+          "Create storage engine": "194 ms",
+          "Write current PID to file": "5 ms",
+          "Initialize FCV before rebuilding indexes": "2 ms",
+          "Drop abandoned idents and get back indexes that need to be rebuilt or builds that need to be restarted": "0 ms",
+          "Rebuild indexes for collections": "0 ms",
+          "Load cluster parameters from disk for a standalone": "1 ms",
+          "Build user and roles graph": "0 ms",
+          "Verify indexes for admin.system.users collection": "0 ms",
+          "Set up the background thread pool responsible for waiting for opTimes to be majority committed": "0 ms",
+          "Start up the replication coordinator": "1 ms",
+          "Ensure the change stream collections on startup contain consistent data": "0 ms",
+          "Write startup options to the audit log": "0 ms",
+          "Start transport layer": "0 ms",
+          "_initAndListen total elapsed time": "806 ms"
+        }
+      }
+    }
+  },
+  {
+    "t": {
+      "$date": "2026-10-21T22:11:58.252+08:00"
+    },
+    "s": "I",
+    "c": "NETWORK",
+    "id": 23016,
+    "ctx": "listener",
+    "msg": "Waiting for connections",
+    "attr": {
+      "port": 27017,
+      "ssl": "off"
+    }
+  },
+  {
+    "t": {
+      "$date": "2026-10-21T22:11:58.252+08:00"
+    },
+    "s": "I",
+    "c": "CONTROL",
+    "id": 8423403,
+    "ctx": "initandlisten",
+    "msg": "mongod startup complete",
+    "attr": {
+      "Summary of time elapsed": {
+        "Startup from clean shutdown?": false,
+        "Statistics": {
+          "Set up periodic runner": "0 ms",
+          "Set up online certificate status protocol manager": "0 ms",
+          "Transport layer setup": "0 ms",
+          "Run initial syncer crash recovery": "0 ms",
+          "Create storage engine lock file in the data directory": "6 ms",
+          "Get metadata describing storage engine": "0 ms",
+          "Validate options in metadata against current startup options": "0 ms",
+          "Create storage engine": "335 ms",
+          "Write current PID to file": "11 ms",
+          "Initialize FCV before rebuilding indexes": "18 ms",
+          "Drop abandoned idents and get back indexes that need to be rebuilt or builds that need to be restarted": "0 ms",
+          "Rebuild indexes for collections": "0 ms",
+          "Load cluster parameters from disk for a standalone": "2 ms",
+          "Build user and roles graph": "0 ms",
+          "Verify indexes for admin.system.users collection": "0 ms",
+          "Set up the background thread pool responsible for waiting for opTimes to be majority committed": "0 ms",
+          "Start up the replication coordinator": "7 ms",
+          "Ensure the change stream collections on startup contain consistent data": "0 ms",
+          "Write startup options to the audit log": "0 ms",
+          "Start transport layer": "0 ms",
+          "_initAndListen total elapsed time": "1186 ms"
+        }
+      }
+    }
+  },
+  {
+    "t": {
+      "$date": "2026-10-22T09:51:48.723+08:00"
+    },
+    "s": "I",
+    "c": "NETWORK",
+    "id": 23016,
+    "ctx": "listener",
+    "msg": "Waiting for connections",
+    "attr": {
+      "port": 27017,
+      "ssl": "off"
+    }
+  },
+  {
+    "t": {
+      "$date": "2026-10-22T09:51:48.723+08:00"
+    },
+    "s": "I",
+    "c": "CONTROL",
+    "id": 8423403,
+    "ctx": "initandlisten",
+    "msg": "mongod startup complete",
+    "attr": {
+      "Summary of time elapsed": {
+        "Startup from clean shutdown?": false,
+        "Statistics": {
+          "Set up periodic runner": "0 ms",
+          "Set up online certificate status protocol manager": "0 ms",
+          "Transport layer setup": "0 ms",
+          "Run initial syncer crash recovery": "0 ms",
+          "Create storage engine lock file in the data directory": "5 ms",
+          "Get metadata describing storage engine": "0 ms",
+          "Validate options in metadata against current startup options": "0 ms",
+          "Create storage engine": "238 ms",
+          "Write current PID to file": "11 ms",
+          "Initialize FCV before rebuilding indexes": "19 ms",
+          "Drop abandoned idents and get back indexes that need to be rebuilt or builds that need to be restarted": "0 ms",
+          "Rebuild indexes for collections": "0 ms",
+          "Load cluster parameters from disk for a standalone": "6 ms",
+          "Build user and roles graph": "0 ms",
+          "Verify indexes for admin.system.users collection": "0 ms",
+          "Set up the background thread pool responsible for waiting for opTimes to be majority committed": "0 ms",
+          "Start up the replication coordinator": "7 ms",
+          "Ensure the change stream collections on startup contain consistent data": "0 ms",
+          "Write startup options to the audit log": "0 ms",
+          "Start transport layer": "0 ms",
+          "_initAndListen total elapsed time": "1064 ms"
+        }
+      }
+    }
+  }
+]

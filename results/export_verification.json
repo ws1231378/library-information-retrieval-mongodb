@@ -1,0 +1,14 @@
+{
+  "books": {
+    "count": 20,
+    "all_fields_equal": true,
+    "source": "MongoDB Compass full collection export",
+    "date": "2026-10-22"
+  },
+  "category_stats": {
+    "count": 5,
+    "all_fields_equal": true,
+    "source": "MongoDB Compass full collection export",
+    "date": "2026-10-22"
+  }
+}

@@ -1,0 +1,138 @@
+[
+  {
+    "test": "导入数量20/16/66",
+    "status": "PASS"
+  },
+  {
+    "test": "日期确为BSON日期",
+    "status": "PASS"
+  },
+  {
+    "test": "特殊集合参数",
+    "status": "PASS"
+  },
+  {
+    "test": "在库视图19本",
+    "status": "PASS"
+  },
+  {
+    "test": "Python关键词1本",
+    "status": "PASS"
+  },
+  {
+    "test": "正则元字符作为普通文本",
+    "status": "PASS"
+  },
+  {
+    "test": "无结果",
+    "status": "PASS"
+  },
+  {
+    "test": "稳定分页20本无重复",
+    "status": "PASS"
+  },
+  {
+    "test": "组合检索",
+    "status": "PASS"
+  },
+  {
+    "test": "五类统计",
+    "status": "PASS"
+  },
+  {
+    "test": "年度趋势总量66",
+    "status": "PASS"
+  },
+  {
+    "test": "月度趋势总量66",
+    "status": "PASS"
+  },
+  {
+    "test": "学院与等级统计",
+    "status": "PASS"
+  },
+  {
+    "test": "拒绝负库存",
+    "status": "PASS"
+  },
+  {
+    "test": "重复ISBN被唯一索引拒绝",
+    "status": "PASS"
+  },
+  {
+    "test": "未知读者不能借书",
+    "status": "PASS"
+  },
+  {
+    "test": "零库存不能借书",
+    "status": "PASS"
+  },
+  {
+    "test": "借出库存减一",
+    "status": "PASS"
+  },
+  {
+    "test": "借阅累计加一",
+    "status": "PASS"
+  },
+  {
+    "test": "时间序列新增事件",
+    "status": "PASS"
+  },
+  {
+    "test": "未归还图书禁止删除",
+    "status": "PASS"
+  },
+  {
+    "test": "归还成功",
+    "status": "PASS"
+  },
+  {
+    "test": "重复归还不重复加库存",
+    "status": "PASS"
+  },
+  {
+    "test": "借阅事件不会被归还覆盖",
+    "status": "PASS"
+  },
+  {
+    "test": "更新读者保留注册时间",
+    "status": "PASS"
+  },
+  {
+    "test": "非法等级被拒绝",
+    "status": "PASS"
+  },
+  {
+    "test": "价格上下限校验",
+    "status": "PASS"
+  },
+  {
+    "test": "非法分页被拒绝",
+    "status": "PASS"
+  },
+  {
+    "test": "update_many标记逾期",
+    "status": "PASS"
+  },
+  {
+    "test": "逾期查询非空",
+    "status": "PASS"
+  },
+  {
+    "test": "新增与删除图书",
+    "status": "PASS"
+  },
+  {
+    "test": "批量插入",
+    "status": "PASS"
+  },
+  {
+    "test": "批量删除零库存",
+    "status": "PASS"
+  },
+  {
+    "test": "热门与活跃榜可关联",
+    "status": "PASS"
+  }
+]

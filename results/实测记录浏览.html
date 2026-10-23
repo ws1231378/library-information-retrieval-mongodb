@@ -1,0 +1,848 @@
+<!doctype html><meta charset="utf-8"><title>MongoDB 实训实测记录</title><style>body{margin:0;background:#eef2f6;color:#142332;font-family:'Microsoft YaHei',sans-serif}header{padding:28px 40px;background:#142d44;color:white}h1{font-size:25px;margin:0 0 8px}main{max-width:1100px;margin:24px auto}section{padding:24px 30px;background:white;margin-bottom:22px;border:1px solid #ccd5de}h2{font-size:22px;margin:0 0 16px}pre{font:15px/1.6 Consolas,'Microsoft YaHei',monospace;white-space:pre-wrap;overflow-wrap:anywhere}nav a{margin-right:18px;color:#186893}p{line-height:1.7}.note{font-size:14px;color:#456}</style><header><h1>图书情报检索与统计平台 · 实测记录</h1><div>已隐藏 · 已隐藏 · 作者　|　MongoDB 8.0.26</div></header><main><p class="note">本页把真实数据库返回值和程序输出排版展示。它是执行记录浏览页，不是终端或 Compass 截图。原始文件位于 results 目录；Compass 截图另存。</p><nav><a href="#s0">任务一 服务启动</a><a href="#s1">任务二 特殊集合与导入</a><a href="#s2">任务三 查询与更新删除</a><a href="#s3">任务四 分类统计与索引</a><a href="#s4">任务四 认证与权限验证</a><a href="#s5">任务五 菜单运行记录</a><a href="#s6">任务五 集成验收</a></nav><section id="s0"><h2>任务一 服务启动</h2><pre>[
+  {
+    &quot;t&quot;: {
+      &quot;$date&quot;: &quot;2026-10-20T22:32:33.624+08:00&quot;
+    },
+    &quot;s&quot;: &quot;I&quot;,
+    &quot;c&quot;: &quot;NETWORK&quot;,
+    &quot;id&quot;: 23016,
+    &quot;ctx&quot;: &quot;listener&quot;,
+    &quot;msg&quot;: &quot;Waiting for connections&quot;,
+    &quot;attr&quot;: {
+      &quot;port&quot;: 27017,
+      &quot;ssl&quot;: &quot;off&quot;
+    }
+  },
+  {
+    &quot;t&quot;: {
+      &quot;$date&quot;: &quot;2026-10-20T22:32:33.625+08:00&quot;
+    },
+    &quot;s&quot;: &quot;I&quot;,
+    &quot;c&quot;: &quot;CONTROL&quot;,
+    &quot;id&quot;: 8423403,
+    &quot;ctx&quot;: &quot;initandlisten&quot;,
+    &quot;msg&quot;: &quot;mongod startup complete&quot;,
+    &quot;attr&quot;: {
+      &quot;Summary of time elapsed&quot;: {
+        &quot;Startup from clean shutdown?&quot;: true,
+        &quot;Statistics&quot;: {
+          &quot;Set up periodic runner&quot;: &quot;0 ms&quot;,
+          &quot;Set up online certificate status protocol manager&quot;: &quot;1 ms&quot;,
+          &quot;Transport layer setup&quot;: &quot;0 ms&quot;,
+          &quot;Run initial syncer crash recovery&quot;: &quot;0 ms&quot;,
+          &quot;Create storage engine lock file in the data directory&quot;: &quot;0 ms&quot;,
+          &quot;Get metadata describing storage engine&quot;: &quot;0 ms&quot;,
+          &quot;Validate options in metadata against current startup options&quot;: &quot;0 ms&quot;,
+          &quot;Create storage engine&quot;: &quot;194 ms&quot;,
+          &quot;Write current PID to file&quot;: &quot;5 ms&quot;,
+          &quot;Initialize FCV before rebuilding indexes&quot;: &quot;2 ms&quot;,
+          &quot;Drop abandoned idents and get back indexes that need to be rebuilt or builds that need to be restarted&quot;: &quot;0 ms&quot;,
+          &quot;Rebuild indexes for collections&quot;: &quot;0 ms&quot;,
+          &quot;Load cluster parameters from disk for a standalone&quot;: &quot;1 ms&quot;,
+          &quot;Build user and roles graph&quot;: &quot;0 ms&quot;,
+          &quot;Verify indexes for admin.system.users collection&quot;: &quot;0 ms&quot;,
+          &quot;Set up the background thread pool responsible for waiting for opTimes to be majority committed&quot;: &quot;0 ms&quot;,
+          &quot;Start up the replication coordinator&quot;: &quot;1 ms&quot;,
+          &quot;Ensure the change stream collections on startup contain consistent data&quot;: &quot;0 ms&quot;,
+          &quot;Write startup options to the audit log&quot;: &quot;0 ms&quot;,
+          &quot;Start transport layer&quot;: &quot;0 ms&quot;,
+          &quot;_initAndListen total elapsed time&quot;: &quot;806 ms&quot;
+        }
+      }
+    }
+  }
+]</pre></section><section id="s1"><h2>任务二 特殊集合与导入</h2><pre>{
+  &quot;version&quot;: &quot;8.0.26&quot;,
+  &quot;collections&quot;: [
+    {
+      &quot;name&quot;: &quot;borrow_logs&quot;,
+      &quot;type&quot;: &quot;timeseries&quot;,
+      &quot;options&quot;: {
+        &quot;expireAfterSeconds&quot;: 63072000,
+        &quot;timeseries&quot;: {
+          &quot;timeField&quot;: &quot;borrow_date&quot;,
+          &quot;granularity&quot;: &quot;hours&quot;,
+          &quot;bucketMaxSpanSeconds&quot;: 2592000
+        }
+      },
+      &quot;info&quot;: {
+        &quot;readOnly&quot;: false
+      }
+    },
+    {
+      &quot;name&quot;: &quot;system.buckets.borrow_logs&quot;,
+      &quot;type&quot;: &quot;collection&quot;,
+      &quot;options&quot;: {
+        &quot;validator&quot;: {
+          &quot;$jsonSchema&quot;: {
+            &quot;bsonType&quot;: &quot;object&quot;,
+            &quot;required&quot;: [
+              &quot;_id&quot;,
+              &quot;control&quot;,
+              &quot;data&quot;
+            ],
+            &quot;properties&quot;: {
+              &quot;_id&quot;: {
+                &quot;bsonType&quot;: &quot;objectId&quot;
+              },
+              &quot;control&quot;: {
+                &quot;bsonType&quot;: &quot;object&quot;,
+                &quot;required&quot;: [
+                  &quot;version&quot;,
+                  &quot;min&quot;,
+                  &quot;max&quot;
+                ],
+                &quot;properties&quot;: {
+                  &quot;version&quot;: {
+                    &quot;bsonType&quot;: &quot;number&quot;
+                  },
+                  &quot;min&quot;: {
+                    &quot;bsonType&quot;: &quot;object&quot;,
+                    &quot;required&quot;: [
+                      &quot;borrow_date&quot;
+                    ],
+                    &quot;properties&quot;: {
+                      &quot;borrow_date&quot;: {
+                        &quot;bsonType&quot;: &quot;date&quot;
+                      }
+                    }
+                  },
+                  &quot;max&quot;: {
+                    &quot;bsonType&quot;: &quot;object&quot;,
+                    &quot;required&quot;: [
+                      &quot;borrow_date&quot;
+                    ],
+                    &quot;properties&quot;: {
+                      &quot;borrow_date&quot;: {
+                        &quot;bsonType&quot;: &quot;date&quot;
+                      }
+                    }
+                  },
+                  &quot;closed&quot;: {
+                    &quot;bsonType&quot;: &quot;bool&quot;
+                  },
+                  &quot;count&quot;: {
+                    &quot;bsonType&quot;: &quot;number&quot;,
+                    &quot;minimum&quot;: 1
+                  }
+                },
+                &quot;additionalProperties&quot;: false
+              },
+              &quot;data&quot;: {
+                &quot;bsonType&quot;: &quot;object&quot;
+              },
+              &quot;meta&quot;: {}
+            },
+            &quot;additionalProperties&quot;: false
+          }
+        },
+        &quot;clusteredIndex&quot;: true,
+        &quot;expireAfterSeconds&quot;: 63072000,
+        &quot;timeseries&quot;: {
+          &quot;timeField&quot;: &quot;borrow_date&quot;,
+          &quot;granularity&quot;: &quot;hours&quot;,
+          &quot;bucketMaxSpanSeconds&quot;: 2592000
+        }
+      },
+      &quot;info&quot;: {
+        &quot;readOnly&quot;: false,
+        &quot;uuid&quot;: {
+          &quot;$binary&quot;: {
+            &quot;base64&quot;: &quot;CfQTYXSuRLS2ISEIxuOAxg==&quot;,
+            &quot;subType&quot;: &quot;04&quot;
+          }
+        }
+      }
+    },
+    {
+      &quot;name&quot;: &quot;borrow_records&quot;,
+      &quot;type&quot;: &quot;collection&quot;,
+      &quot;options&quot;: {},
+      &quot;info&quot;: {
+        &quot;readOnly&quot;: false,
+        &quot;uuid&quot;: {
+          &quot;$binary&quot;: {
+            &quot;base64&quot;: &quot;LoD/7I5YSw26RnqzNdxy7g==&quot;,
+            &quot;subType&quot;: &quot;04&quot;
+          }
+        }
+      },
+      &quot;idIndex&quot;: {
+        &quot;v&quot;: 2,
+        &quot;key&quot;: {
+          &quot;_id&quot;: 1
+        },
+        &quot;name&quot;: &quot;_id_&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;category_stats&quot;,
+      &quot;type&quot;: &quot;collection&quot;,
+      &quot;options&quot;: {},
+      &quot;info&quot;: {
+        &quot;readOnly&quot;: false,
+        &quot;uuid&quot;: {
+          &quot;$binary&quot;: {
+            &quot;base64&quot;: &quot;X272gvkzQe2tid7xEz1Lsw==&quot;,
+            &quot;subType&quot;: &quot;04&quot;
+          }
+        }
+      },
+      &quot;idIndex&quot;: {
+        &quot;v&quot;: 2,
+        &quot;key&quot;: {
+          &quot;_id&quot;: 1
+        },
+        &quot;name&quot;: &quot;_id_&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;book_logs&quot;,
+      &quot;type&quot;: &quot;collection&quot;,
+      &quot;options&quot;: {
+        &quot;capped&quot;: true,
+        &quot;size&quot;: 1048576,
+        &quot;max&quot;: 1000
+      },
+      &quot;info&quot;: {
+        &quot;readOnly&quot;: false,
+        &quot;uuid&quot;: {
+          &quot;$binary&quot;: {
+            &quot;base64&quot;: &quot;bUK1tgDxS4CMSbmQfo0Hbw==&quot;,
+            &quot;subType&quot;: &quot;04&quot;
+          }
+        }
+      },
+      &quot;idIndex&quot;: {
+        &quot;v&quot;: 2,
+        &quot;key&quot;: {
+          &quot;_id&quot;: 1
+        },
+        &quot;name&quot;: &quot;_id_&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;app_meta&quot;,
+      &quot;type&quot;: &quot;collection&quot;,
+      &quot;options&quot;: {},
+      &quot;info&quot;: {
+        &quot;readOnly&quot;: false,
+        &quot;uuid&quot;: {
+          &quot;$binary&quot;: {
+            &quot;base64&quot;: &quot;qLvAhu4oQom4C19q0zdVfw==&quot;,
+            &quot;subType&quot;: &quot;04&quot;
+          }
+        }
+      },
+      &quot;idIndex&quot;: {
+        &quot;v&quot;: 2,
+        &quot;key&quot;: {
+          &quot;_id&quot;: 1
+        },
+        &quot;name&quot;: &quot;_id_&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;readers&quot;,
+      &quot;type&quot;: &quot;collection&quot;,
+      &quot;options&quot;: {},
+      &quot;info&quot;: {
+        &quot;readOnly&quot;: false,
+        &quot;uuid&quot;: {
+          &quot;$binary&quot;: {
+            &quot;base64&quot;: &quot;sbS3EAHnREyHkiEKIamLag==&quot;,
+            &quot;subType&quot;: &quot;04&quot;
+          }
+        }
+      },
+      &quot;idIndex&quot;: {
+        &quot;v&quot;: 2,
+        &quot;key&quot;: {
+          &quot;_id&quot;: 1
+        },
+        &quot;name&quot;: &quot;_id_&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;books&quot;,
+      &quot;type&quot;: &quot;collection&quot;,
+      &quot;options&quot;: {},
+      &quot;info&quot;: {
+        &quot;readOnly&quot;: false,
+        &quot;uuid&quot;: {
+          &quot;$binary&quot;: {
+            &quot;base64&quot;: &quot;2idbI95BRBqlt0VcIlUL1g==&quot;,
+            &quot;subType&quot;: &quot;04&quot;
+          }
+        }
+      },
+      &quot;idIndex&quot;: {
+        &quot;v&quot;: 2,
+        &quot;key&quot;: {
+          &quot;_id&quot;: 1
+        },
+        &quot;name&quot;: &quot;_id_&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;system.views&quot;,
+      &quot;type&quot;: &quot;collection&quot;,
+      &quot;options&quot;: {},
+      &quot;info&quot;: {
+        &quot;readOnly&quot;: false,
+        &quot;uuid&quot;: {
+          &quot;$binary&quot;: {
+            &quot;base64&quot;: &quot;/p6O6uHjQTWS+N35PHqClQ==&quot;,
+            &quot;subType&quot;: &quot;04&quot;
+          }
+        }
+      },
+      &quot;idIndex&quot;: {
+        &quot;v&quot;: 2,
+        &quot;key&quot;: {
+          &quot;_id&quot;: 1
+        },
+        &quot;name&quot;: &quot;_id_&quot;
+      }
+    },
+    {
+      &quot;name&quot;: &quot;book_in_stock&quot;,
+      &quot;type&quot;: &quot;view&quot;,
+      &quot;options&quot;: {
+        &quot;viewOn&quot;: &quot;books&quot;,
+        &quot;pipeline&quot;: [
+          {
+            &quot;$match&quot;: {
+              &quot;stock&quot;: {
+                &quot;$gt&quot;: 0
+              }
+            }
+          }
+        ]
+      },
+      &quot;info&quot;: {
+        &quot;readOnly&quot;: true
+      }
+    }
+  ],
+  &quot;counts&quot;: {
+    &quot;books&quot;: 20,
+    &quot;readers&quot;: 16,
+    &quot;borrow_logs&quot;: 66,
+    &quot;book_in_stock&quot;: 19
+  }
+}</pre></section><section id="s2"><h2>任务三 查询与更新删除</h2><pre>{
+  &quot;Q1&quot;: 7,
+  &quot;Q2&quot;: 8,
+  &quot;Q3&quot;: 1,
+  &quot;Q4&quot;: 3,
+  &quot;Q5&quot;: 16,
+  &quot;Q6&quot;: 10,
+  &quot;Q7&quot;: 7,
+  &quot;Q8&quot;: 1,
+  &quot;Q9&quot;: 1,
+  &quot;Q10&quot;: 1,
+  &quot;Q11&quot;: 12,
+  &quot;Q12&quot;: 17,
+  &quot;Q13&quot;: 1,
+  &quot;U1&quot;: 1,
+  &quot;U2&quot;: 7,
+  &quot;U3&quot;: 1,
+  &quot;U4&quot;: 1,
+  &quot;D1&quot;: 1,
+  &quot;D2&quot;: 13,
+  &quot;D3&quot;: 1
+}</pre></section><section id="s3"><h2>任务四 分类统计与索引</h2><pre>{
+  &quot;分类&quot;: [
+    {
+      &quot;_id&quot;: &quot;外语&quot;,
+      &quot;count&quot;: 2,
+      &quot;avg_rating&quot;: 4.35,
+      &quot;max_stock&quot;: 16,
+      &quot;min_stock&quot;: 3
+    },
+    {
+      &quot;_id&quot;: &quot;数学&quot;,
+      &quot;count&quot;: 3,
+      &quot;avg_rating&quot;: 4.666666666666667,
+      &quot;max_stock&quot;: 25,
+      &quot;min_stock&quot;: 4
+    },
+    {
+      &quot;_id&quot;: &quot;文学&quot;,
+      &quot;count&quot;: 5,
+      &quot;avg_rating&quot;: 4.7,
+      &quot;max_stock&quot;: 32,
+      &quot;min_stock&quot;: 5
+    },
+    {
+      &quot;_id&quot;: &quot;经济管理&quot;,
+      &quot;count&quot;: 3,
+      &quot;avg_rating&quot;: 4.2,
+      &quot;max_stock&quot;: 14,
+      &quot;min_stock&quot;: 6
+    },
+    {
+      &quot;_id&quot;: &quot;计算机&quot;,
+      &quot;count&quot;: 7,
+      &quot;avg_rating&quot;: 4.5,
+      &quot;max_stock&quot;: 22,
+      &quot;min_stock&quot;: 0
+    }
+  ],
+  &quot;年度&quot;: [
+    {
+      &quot;count&quot;: 20,
+      &quot;year&quot;: &quot;2023年&quot;
+    },
+    {
+      &quot;count&quot;: 28,
+      &quot;year&quot;: &quot;2024年&quot;
+    },
+    {
+      &quot;count&quot;: 18,
+      &quot;year&quot;: &quot;2025年&quot;
+    }
+  ],
+  &quot;扫描对比&quot;: {
+    &quot;explain-COLLSCAN&quot;: {
+      &quot;nReturned&quot;: 3,
+      &quot;totalDocsExamined&quot;: 20,
+      &quot;totalKeysExamined&quot;: 0,
+      &quot;executionTimeMillis&quot;: 0
+    },
+    &quot;explain-IXSCAN&quot;: {
+      &quot;nReturned&quot;: 3,
+      &quot;totalDocsExamined&quot;: 3,
+      &quot;totalKeysExamined&quot;: 3,
+      &quot;executionTimeMillis&quot;: 0
+    }
+  }
+}</pre></section><section id="s4"><h2>任务四 认证与权限验证</h2><pre>{
+  &quot;created_users&quot;: [
+    &quot;labAdmin&quot;,
+    &quot;libReader&quot;,
+    &quot;libWriter&quot;
+  ],
+  &quot;password_mode&quot;: &quot;本次自动化验收使用随机密码，交互式创建脚本为 scripts/create_users.js&quot;,
+  &quot;port&quot;: 27017,
+  &quot;auth&quot;: true,
+  &quot;anonymous_read&quot;: {
+    &quot;code&quot;: 13,
+    &quot;denied&quot;: true
+  },
+  &quot;reader_read_count&quot;: 20,
+  &quot;reader_write&quot;: {
+    &quot;code&quot;: 13,
+    &quot;denied&quot;: true
+  },
+  &quot;writer_write&quot;: {
+    &quot;acknowledged&quot;: true
+  },
+  &quot;users&quot;: [
+    {
+      &quot;user&quot;: &quot;libReader&quot;,
+      &quot;db&quot;: &quot;library&quot;,
+      &quot;roles&quot;: [
+        {
+          &quot;role&quot;: &quot;read&quot;,
+          &quot;db&quot;: &quot;library&quot;
+        }
+      ]
+    },
+    {
+      &quot;user&quot;: &quot;libWriter&quot;,
+      &quot;db&quot;: &quot;library&quot;,
+      &quot;roles&quot;: [
+        {
+          &quot;role&quot;: &quot;readWrite&quot;,
+          &quot;db&quot;: &quot;library&quot;
+        },
+        {
+          &quot;role&quot;: &quot;dbAdmin&quot;,
+          &quot;db&quot;: &quot;library&quot;
+        }
+      ]
+    }
+  ]
+}</pre></section><section id="s5"><h2>任务五 菜单运行记录</h2><pre>数据库连接成功
+app_meta: 1
+book_in_stock: 19
+book_logs: 1
+books: 20
+borrow_logs: 66
+borrow_records: 66
+category_stats: 5
+readers: 16
+
+=== 图书情报检索与统计平台 ===
+1 图书关键词检索与分页   2 ISBN 精确检索    3 评分前五
+4 分类统计并落库         5 年度借阅趋势     6 累计借阅榜
+7 调整库存               8 删除指定图书     9 新增图书
+10 读者列表              11 读者统计       12 登记借阅
+13 归还图书              14 逾期查询       15 读者借阅记录
+16 维护读者              17 多条件检索     18 月度借阅趋势
+19 流水热门榜            20 活跃读者榜     21 标记逾期
+22 批量导入图书          23 删除指定类别零库存图书
+0 退出
+
+选择功能：关键词：页码：{
+  &quot;total&quot;: 1,
+  &quot;page&quot;: 1,
+  &quot;items&quot;: [
+    {
+      &quot;isbn&quot;: &quot;9787115428028&quot;,
+      &quot;title&quot;: &quot;Python编程：从入门到实践&quot;,
+      &quot;author&quot;: &quot;埃里克·马瑟斯&quot;,
+      &quot;publisher&quot;: &quot;人民邮电出版社&quot;,
+      &quot;category&quot;: &quot;计算机&quot;,
+      &quot;price&quot;: 89.0,
+      &quot;stock&quot;: 15,
+      &quot;rating&quot;: 4.6,
+      &quot;tags&quot;: [
+        &quot;编程&quot;,
+        &quot;入门&quot;,
+        &quot;Python&quot;
+      ],
+      &quot;publish_date&quot;: {
+        &quot;$date&quot;: &quot;2023-02-28T16:00:00Z&quot;
+      },
+      &quot;borrow_count&quot;: 127
+    }
+  ]
+}
+
+=== 图书情报检索与统计平台 ===
+1 图书关键词检索与分页   2 ISBN 精确检索    3 评分前五
+4 分类统计并落库         5 年度借阅趋势     6 累计借阅榜
+7 调整库存               8 删除指定图书     9 新增图书
+10 读者列表              11 读者统计       12 登记借阅
+13 归还图书              14 逾期查询       15 读者借阅记录
+16 维护读者              17 多条件检索     18 月度借阅趋势
+19 流水热门榜            20 活跃读者榜     21 标记逾期
+22 批量导入图书          23 删除指定类别零库存图书
+0 退出
+
+选择功能：[
+  {
+    &quot;isbn&quot;: &quot;9787544253994&quot;,
+    &quot;title&quot;: &quot;活着&quot;,
+    &quot;author&quot;: &quot;余华&quot;,
+    &quot;publisher&quot;: &quot;作家出版社&quot;,
+    &quot;category&quot;: &quot;文学&quot;,
+    &quot;price&quot;: 28.0,
+    &quot;stock&quot;: 32,
+    &quot;rating&quot;: 4.9,
+    &quot;tags&quot;: [
+      &quot;文学&quot;,
+      &quot;小说&quot;,
+      &quot;经典&quot;
+    ],
+    &quot;publish_date&quot;: {
+      &quot;$date&quot;: &quot;2012-07-31T16:00:00Z&quot;
+    },
+    &quot;borrow_count&quot;: 243
+  },
+  {
+    &quot;isbn&quot;: &quot;9787121362726&quot;,
+    &quot;title&quot;: &quot;深入理解计算机系统（原书第3版）&quot;,
+    &quot;author&quot;: &quot;Randal E. Bryant&quot;,
+    &quot;publisher&quot;: &quot;电子工业出版社&quot;,
+    &quot;category&quot;: &quot;计算机&quot;,
+    &quot;price&quot;: 139.0,
+    &quot;stock&quot;: 8,
+    &quot;rating&quot;: 4.8,
+    &quot;tags&quot;: [
+      &quot;计算机&quot;,
+      &quot;体系结构&quot;,
+      &quot;进阶&quot;
+    ],
+    &quot;publish_date&quot;: {
+      &quot;$date&quot;: &quot;2021-11-14T16:00:00Z&quot;
+    },
+    &quot;borrow_count&quot;: 156
+  },
+  {
+    &quot;isbn&quot;: &quot;9787518910041&quot;,
+    &quot;title&quot;: &quot;哥德尔证明&quot;,
+    &quot;author&quot;: &quot;道格拉斯·霍斯曼&quot;,
+    &quot;publisher&quot;: &quot;中国人民大学出版社&quot;,
+    &quot;category&quot;: &quot;数学&quot;,
+    &quot;price&quot;: 48.0,
+    &quot;stock&quot;: 4,
+    &quot;rating&quot;: 4.8,
+    &quot;publish_date&quot;: {
+      &quot;$date&quot;: &quot;2016-07-31T16:00:00Z&quot;
+    },
+    &quot;borrow_count&quot;: 61
+  },
+  {
+    &quot;isbn&quot;: &quot;9787549529322&quot;,
+    &quot;title&quot;: &quot;平凡的世界（全三部）&quot;,
+    &quot;author&quot;: &quot;路遥&quot;,
+    &quot;publisher&quot;: &quot;北京十月文艺出版社&quot;,
+    &quot;category&quot;: &quot;文学&quot;,
+    &quot;price&quot;: 98.0,
+    &quot;stock&quot;: 9,
+    &quot;rating&quot;: 4.8,
+    &quot;tags&quot;: [
+      &quot;文学&quot;,
+      &quot;小说&quot;,
+      &quot;经典&quot;
+    ],
+    &quot;publish_date&quot;: {
+      &quot;$date&quot;: &quot;2017-04-30T16:00:00Z&quot;
+    },
+    &quot;borrow_count&quot;: 167
+  },
+  {
+    &quot;isbn&quot;: &quot;9787020042033&quot;,
+    &quot;title&quot;: &quot;红楼梦&quot;,
+    &quot;author&quot;: &quot;曹雪芹&quot;,
+    &quot;publisher&quot;: &quot;人民文学出版社&quot;,
+    &quot;category&quot;: &quot;文学&quot;,
+    &quot;price&quot;: 59.7,
+    &quot;stock&quot;: 21,
+    &quot;rating&quot;: 4.7,
+    &quot;tags&quot;: [
+      &quot;文学&quot;,
+      &quot;古典&quot;,
+      &quot;小说&quot;
+    ],
+    &quot;publish_date&quot;: {
+      &quot;$date&quot;: &quot;1996-11-30T16:00:00Z&quot;
+    },
+    &quot;borrow_count&quot;: 189
+  }
+]
+
+=== 图书情报检索与统计平台 ===
+1 图书关键词检索与分页   2 ISBN 精确检索    3 评分前五
+4 分类统计并落库         5 年度借阅趋势     6 累计借阅榜
+7 调整库存               8 删除指定图书     9 新增图书
+10 读者列表              11 读者统计       12 登记借阅
+13 归还图书              14 逾期查询       15 读者借阅记录
+16 维护读者              17 多条件检索     18 月度借阅趋势
+19 流水热门榜            20 活跃读者榜     21 标记逾期
+22 批量导入图书          23 删除指定类别零库存图书
+0 退出
+
+选择功能：[
+  {
+    &quot;_id&quot;: &quot;2023年&quot;,
+    &quot;count&quot;: 20
+  },
+  {
+    &quot;_id&quot;: &quot;2024年&quot;,
+    &quot;count&quot;: 28
+  },
+  {
+    &quot;_id&quot;: &quot;2025年&quot;,
+    &quot;count&quot;: 18
+  }
+]
+
+=== 图书情报检索与统计平台 ===
+1 图书关键词检索与分页   2 ISBN 精确检索    3 评分前五
+4 分类统计并落库         5 年度借阅趋势     6 累计借阅榜
+7 调整库存               8 删除指定图书     9 新增图书
+10 读者列表              11 读者统计       12 登记借阅
+13 归还图书              14 逾期查询       15 读者借阅记录
+16 维护读者              17 多条件检索     18 月度借阅趋势
+19 流水热门榜            20 活跃读者榜     21 标记逾期
+22 批量导入图书          23 删除指定类别零库存图书
+0 退出
+
+选择功能：{
+  &quot;college&quot;: [
+    {
+      &quot;name&quot;: &quot;外国语学院&quot;,
+      &quot;count&quot;: 2
+    },
+    {
+      &quot;name&quot;: &quot;数学与统计学院&quot;,
+      &quot;count&quot;: 3
+    },
+    {
+      &quot;name&quot;: &quot;文学院&quot;,
+      &quot;count&quot;: 3
+    },
+    {
+      &quot;name&quot;: &quot;管理学院&quot;,
+      &quot;count&quot;: 2
+    },
+    {
+      &quot;name&quot;: &quot;经济管理学院&quot;,
+      &quot;count&quot;: 2
+    },
+    {
+      &quot;name&quot;: &quot;计算机学院&quot;,
+      &quot;count&quot;: 4
+    }
+  ],
+  &quot;level&quot;: [
+    {
+      &quot;name&quot;: &quot;教师&quot;,
+      &quot;count&quot;: 2
+    },
+    {
+      &quot;name&quot;: &quot;普通&quot;,
+      &quot;count&quot;: 10
+    },
+    {
+      &quot;name&quot;: &quot;高级&quot;,
+      &quot;count&quot;: 4
+    }
+  ]
+}
+
+=== 图书情报检索与统计平台 ===
+1 图书关键词检索与分页   2 ISBN 精确检索    3 评分前五
+4 分类统计并落库         5 年度借阅趋势     6 累计借阅榜
+7 调整库存               8 删除指定图书     9 新增图书
+10 读者列表              11 读者统计       12 登记借阅
+13 归还图书              14 逾期查询       15 读者借阅记录
+16 维护读者              17 多条件检索     18 月度借阅趋势
+19 流水热门榜            20 活跃读者榜     21 标记逾期
+22 批量导入图书          23 删除指定类别零库存图书
+0 退出
+
+选择功能：数据库连接已关闭
+</pre></section><section id="s6"><h2>任务五 集成验收</h2><pre>[
+  {
+    &quot;test&quot;: &quot;导入数量20/16/66&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;日期确为BSON日期&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;特殊集合参数&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;在库视图19本&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;Python关键词1本&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;正则元字符作为普通文本&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;无结果&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;稳定分页20本无重复&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;组合检索&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;五类统计&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;年度趋势总量66&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;月度趋势总量66&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;学院与等级统计&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;拒绝负库存&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;重复ISBN被唯一索引拒绝&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;未知读者不能借书&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;零库存不能借书&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;借出库存减一&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;借阅累计加一&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;时间序列新增事件&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;未归还图书禁止删除&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;归还成功&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;重复归还不重复加库存&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;借阅事件不会被归还覆盖&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;更新读者保留注册时间&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;非法等级被拒绝&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;价格上下限校验&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;非法分页被拒绝&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;update_many标记逾期&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;逾期查询非空&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;新增与删除图书&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;批量插入&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;批量删除零库存&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  },
+  {
+    &quot;test&quot;: &quot;热门与活跃榜可关联&quot;,
+    &quot;status&quot;: &quot;PASS&quot;
+  }
+]</pre></section></main>
