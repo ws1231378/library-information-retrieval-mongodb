@@ -1,0 +1,1853 @@
+
+�ǻ�ͼ���������Դƽ̨
+1 ͼ���ҳ 2 ���߷�ҳ 3 ������� 4 ����ͳ�� 5 ѧԺǰ�� 6 �������� 7 ��������
+8 �������ͳ�� 9 �ϴ��ļ� 10 �ļ��嵥 11 ���������� 12 ����ͼ�� 13 ��������
+14 �޸�ͼ�� 15 �޸Ķ��� 16 ɾ��ͼ�� 17 ɾ������ 18 ���� 19 ���� 20 ����ͳ�� 21 ������� 0 �˳�
+ѡ��ҳ�룺[
+  {
+    "_id": {
+      "$oid": "6aedd3ecdab9c714405fd03e"
+    },
+    "isbn": "9787115293800",
+    "title": "JavaScript�߼�������ƣ���4�棩",
+    "author": "Matt Frisbie",
+    "publisher": "�����ʵ������",
+    "category": "�����",
+    "price": 109.0,
+    "stock": 17,
+    "rating": 4.4,
+    "publish_date": {
+      "$date": "2020-05-31T16:00:00Z"
+    },
+    "borrow_count": 134,
+    "location": {
+      "floor": "��¥רҵͼ����",
+      "shelf": "A-02",
+      "copies": 3
+    },
+    "tags": [
+      "JavaScript",
+      "ǰ��",
+      "����"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ecdab9c714405fd061"
+    },
+    "isbn": "9787115428004",
+    "title": "Python���ݷ���",
+    "author": "Wes McKinney",
+    "publisher": "�����ʵ������",
+    "category": "�����",
+    "price": 79.0,
+    "stock": 12,
+    "rating": 4.5,
+    "publish_date": {
+      "$date": "2018-07-31T16:00:00Z"
+    },
+    "borrow_count": 145,
+    "location": {
+      "floor": "��¥רҵͼ����",
+      "shelf": "A-12",
+      "copies": 3
+    },
+    "tags": [
+      "���",
+      "���ݷ���",
+      "Python"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ecdab9c714405fd03a"
+    },
+    "isbn": "9787115428028",
+    "title": "Python��̣������ŵ�ʵ��",
+    "author": "����ˡ���ɪ˹",
+    "publisher": "�����ʵ������",
+    "category": "�����",
+    "price": 89.0,
+    "stock": 15,
+    "rating": 4.6,
+    "publish_date": {
+      "$date": "2023-02-28T16:00:00Z"
+    },
+    "borrow_count": 127,
+    "location": {
+      "floor": "��¥רҵͼ����",
+      "shelf": "A-07",
+      "copies": 2
+    },
+    "tags": [
+      "���",
+      "����",
+      "Python"
+    ],
+    "ebook_name": "ebook_1.pdf"
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ecdab9c714405fd05d"
+    },
+    "isbn": "9787508647357",
+    "title": "����ʮ����",
+    "author": "������",
+    "publisher": "�л����",
+    "category": "��ʷ",
+    "price": 36.0,
+    "stock": 15,
+    "rating": 4.6,
+    "publish_date": {
+      "$date": "2006-07-31T16:00:00Z"
+    },
+    "borrow_count": 134,
+    "location": {
+      "floor": "һ¥����ͼ����",
+      "shelf": "F-17",
+      "copies": 1
+    },
+    "tags": [
+      "��ʷ",
+      "�й�ʷ",
+      "����"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ecdab9c714405fd05e"
+    },
+    "isbn": "9787108009821",
+    "title": "�й�ͨʷ",
+    "author": "��˼��",
+    "publisher": "������顤��֪�������",
+    "category": "��ʷ",
+    "price": 78.0,
+    "stock": 7,
+    "rating": 4.5,
+    "publish_date": {
+      "$date": "2004-12-31T16:00:00Z"
+    },
+    "borrow_count": 88,
+    "location": {
+      "floor": "һ¥����ͼ����",
+      "shelf": "F-10",
+      "copies": 2
+    },
+    "tags": [
+      "��ʷ",
+      "�й�ʷ"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ecdab9c714405fd05c"
+    },
+    "isbn": "9787508660752",
+    "title": "�����ʷ",
+    "author": "���߶���������",
+    "publisher": "���ų�����",
+    "category": "��ʷ",
+    "price": 68.0,
+    "stock": 18,
+    "rating": 4.7,
+    "publish_date": {
+      "$date": "2014-10-31T16:00:00Z"
+    },
+    "borrow_count": 221,
+    "location": {
+      "floor": "һ¥����ͼ����",
+      "shelf": "F-01",
+      "copies": 1
+    },
+    "tags": [
+      "��ʷ",
+      "���",
+      "����"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ecdab9c714405fd043"
+    },
+    "isbn": "9787111407010",
+    "title": "��������֮��",
+    "author": "Robert C. Martin",
+    "publisher": "�����ʵ������",
+    "category": "�����",
+    "price": 59.0,
+    "stock": 19,
+    "rating": 4.6,
+    "publish_date": {
+      "$date": "2009-12-31T16:00:00Z"
+    },
+    "borrow_count": 168,
+    "location": {
+      "floor": "��¥רҵͼ����",
+      "shelf": "A-05",
+      "copies": 3
+    },
+    "tags": [
+      "���",
+      "�淶",
+      "����"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ecdab9c714405fd05f"
+    },
+    "isbn": "9787508672069",
+    "title": "ȫ��ͨʷ",
+    "author": "˹�����ﰢŵ˹",
+    "publisher": "������ѧ������",
+    "category": "��ʷ",
+    "price": 98.0,
+    "stock": 6,
+    "rating": 4.6,
+    "publish_date": {
+      "$date": "2006-09-30T16:00:00Z"
+    },
+    "borrow_count": 76,
+    "location": {
+      "floor": "һ¥����ͼ����",
+      "shelf": "F-07",
+      "copies": 1
+    },
+    "tags": [
+      "��ʷ",
+      "����ʷ",
+      "�̲�"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ecdab9c714405fd04d"
+    },
+    "isbn": "9787521701326",
+    "title": "��˾����",
+    "author": "˹�ٷҡ���˹",
+    "publisher": "�й������ѧ������",
+    "category": "���ù���",
+    "price": 89.0,
+    "stock": 11,
+    "rating": 4.2,
+    "publish_date": {
+      "$date": "2018-06-30T16:00:00Z"
+    },
+    "borrow_count": 87,
+    "location": {
+      "floor": "��¥רҵͼ����",
+      "shelf": "C-06",
+      "copies": 1
+    },
+    "tags": [
+      "����",
+      "�̲�"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ecdab9c714405fd04e"
+    },
+    "isbn": "9787521711881",
+    "title": "��ҵ��ҵ����",
+    "author": "�Ŵ�ҵ",
+    "publisher": "������ѧ������",
+    "category": "���ù���",
+    "price": 59.0,
+    "stock": 6,
+    "rating": 4.0,
+    "publish_date": {
+      "$date": "2021-08-31T16:00:00Z"
+    },
+    "borrow_count": 45,
+    "location": {
+      "floor": "��¥רҵͼ����",
+      "shelf": "C-19",
+      "copies": 1
+    },
+    "tags": [
+      "����",
+      "��ҵ"
+    ]
+  }
+]
+
+�ǻ�ͼ���������Դƽ̨
+1 ͼ���ҳ 2 ���߷�ҳ 3 ������� 4 ����ͳ�� 5 ѧԺǰ�� 6 �������� 7 ��������
+8 �������ͳ�� 9 �ϴ��ļ� 10 �ļ��嵥 11 ���������� 12 ����ͼ�� 13 ��������
+14 �޸�ͼ�� 15 �޸Ķ��� 16 ɾ��ͼ�� 17 ɾ������ 18 ���� 19 ���� 20 ����ͳ�� 21 ������� 0 �˳�
+ѡ��ҳ�룺[
+  {
+    "_id": {
+      "$oid": "6aedd3ecdab9c714405fd06c"
+    },
+    "card_no": "R20240001",
+    "name": "����",
+    "college": "�����ѧԺ",
+    "email": "stu01@example.edu",
+    "phone": "13010000000",
+    "level": "��ͨ",
+    "register_date": {
+      "$date": "2023-12-31T16:00:00Z"
+    },
+    "fav_categories": [
+      "�����",
+      "���ù���"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ecdab9c714405fd06d"
+    },
+    "card_no": "R20240002",
+    "name": "��С��",
+    "college": "���ù���ѧԺ",
+    "email": "stu02@example.edu",
+    "phone": "13110000137",
+    "level": "��ͨ",
+    "register_date": {
+      "$date": "2024-02-03T16:00:00Z"
+    },
+    "fav_categories": [
+      "��ѧ",
+      "��ѧ"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ecdab9c714405fd06e"
+    },
+    "card_no": "R20240003",
+    "name": "��ǿ",
+    "college": "�����ѧԺ",
+    "email": "stu03@example.edu",
+    "phone": "13210000274",
+    "level": "��ͨ",
+    "register_date": {
+      "$date": "2024-03-06T16:00:00Z"
+    },
+    "fav_categories": [
+      "���ù���",
+      "����"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ecdab9c714405fd06f"
+    },
+    "card_no": "R20240004",
+    "name": "����",
+    "college": "��ѧ��ͳ��ѧԺ",
+    "email": null,
+    "phone": "13310000411",
+    "level": "��ͨ",
+    "register_date": {
+      "$date": "2024-04-09T16:00:00Z"
+    },
+    "fav_categories": [
+      "��ѧ",
+      "��ʷ"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ecdab9c714405fd070"
+    },
+    "card_no": "R20240005",
+    "name": "�¾�",
+    "college": "��ѧԺ",
+    "email": "stu05@example.edu",
+    "phone": "13410000548",
+    "level": "�߼�",
+    "register_date": {
+      "$date": "2024-05-12T16:00:00Z"
+    },
+    "fav_categories": [
+      "����",
+      "�����"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ecdab9c714405fd071"
+    },
+    "card_no": "R20240006",
+    "name": "����",
+    "college": "��ʷ�Ļ�ѧԺ",
+    "email": "stu06@example.edu",
+    "phone": "13510000685",
+    "level": "��ʦ",
+    "register_date": {
+      "$date": "2024-06-15T16:00:00Z"
+    },
+    "fav_categories": [
+      "��ʷ",
+      "��ѧ"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ecdab9c714405fd072"
+    },
+    "card_no": "R20240007",
+    "name": "����",
+    "college": "����ѧԺ",
+    "email": "stu07@example.edu",
+    "phone": "13610000822",
+    "level": "��ͨ",
+    "register_date": {
+      "$date": "2024-07-18T16:00:00Z"
+    },
+    "fav_categories": [
+      "�����",
+      "���ù���"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ecdab9c714405fd073"
+    },
+    "card_no": "R20240008",
+    "name": "����",
+    "college": "�����ѧԺ",
+    "email": null,
+    "phone": "13710000959",
+    "level": "��ͨ",
+    "register_date": {
+      "$date": "2024-08-21T16:00:00Z"
+    },
+    "fav_categories": [
+      "��ѧ",
+      "��ѧ"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ecdab9c714405fd074"
+    },
+    "card_no": "R20240009",
+    "name": "����",
+    "college": "���ù���ѧԺ",
+    "email": "stu09@example.edu",
+    "phone": "13810001096",
+    "level": "��ͨ",
+    "register_date": {
+      "$date": "2024-09-24T16:00:00Z"
+    },
+    "fav_categories": [
+      "���ù���",
+      "����"
+    ]
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ecdab9c714405fd075"
+    },
+    "card_no": "R20240010",
+    "name": "֣��",
+    "college": "�����ѧԺ",
+    "email": "stu10@example.edu",
+    "phone": "13910001233",
+    "level": "��ͨ",
+    "register_date": {
+      "$date": "2023-12-31T16:00:00Z"
+    },
+    "fav_categories": [
+      "��ѧ",
+      "��ʷ"
+    ]
+  }
+]
+
+�ǻ�ͼ���������Դƽ̨
+1 ͼ���ҳ 2 ���߷�ҳ 3 ������� 4 ����ͳ�� 5 ѧԺǰ�� 6 �������� 7 ��������
+8 �������ͳ�� 9 �ϴ��ļ� 10 �ļ��嵥 11 ���������� 12 ����ͼ�� 13 ��������
+14 �޸�ͼ�� 15 �޸Ķ��� 16 ɾ��ͼ�� 17 ɾ������ 18 ���� 19 ���� 20 ����ͳ�� 21 ������� 0 �˳�
+ѡ��{
+  "query": "���۸�",
+  "filter": {
+    "category": "�����",
+    "price": {
+      "$gte": 50,
+      "$lte": 100
+    }
+  },
+  "count": 8,
+  "rows": [
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd043"
+      },
+      "isbn": "9787111407010",
+      "title": "��������֮��",
+      "author": "Robert C. Martin",
+      "publisher": "�����ʵ������",
+      "category": "�����",
+      "price": 59.0,
+      "stock": 19,
+      "rating": 4.6,
+      "publish_date": {
+        "$date": "2009-12-31T16:00:00Z"
+      },
+      "borrow_count": 168,
+      "location": {
+        "floor": "��¥רҵͼ����",
+        "shelf": "A-05",
+        "copies": 3
+      },
+      "tags": [
+        "���",
+        "�淶",
+        "����"
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd062"
+      },
+      "isbn": "9787115435069",
+      "title": "����ѧϰʵս",
+      "author": "Peter Harrington",
+      "publisher": "�����ʵ������",
+      "category": "�����",
+      "price": 69.0,
+      "stock": 10,
+      "rating": 4.3,
+      "publish_date": {
+        "$date": "2013-05-31T16:00:00Z"
+      },
+      "borrow_count": 137,
+      "location": {
+        "floor": "��¥רҵͼ����",
+        "shelf": "A-15",
+        "copies": 1
+      },
+      "tags": [
+        "����ѧϰ",
+        "�㷨",
+        "ʵս"
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd03f"
+      },
+      "isbn": "9787121362855",
+      "title": "���ģʽ",
+      "author": "Erich Gamma",
+      "publisher": "���ӹ�ҵ������",
+      "category": "�����",
+      "price": 79.0,
+      "stock": 13,
+      "rating": 4.7,
+      "publish_date": {
+        "$date": "2005-12-31T16:00:00Z"
+      },
+      "borrow_count": 171,
+      "location": {
+        "floor": "��¥רҵͼ����",
+        "shelf": "A-09",
+        "copies": 2
+      },
+      "tags": [
+        "���",
+        "���ģʽ",
+        "����"
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd061"
+      },
+      "isbn": "9787115428004",
+      "title": "Python���ݷ���",
+      "author": "Wes McKinney",
+      "publisher": "�����ʵ������",
+      "category": "�����",
+      "price": 79.0,
+      "stock": 12,
+      "rating": 4.5,
+      "publish_date": {
+        "$date": "2018-07-31T16:00:00Z"
+      },
+      "borrow_count": 145,
+      "location": {
+        "floor": "��¥רҵͼ����",
+        "shelf": "A-12",
+        "copies": 3
+      },
+      "tags": [
+        "���",
+        "���ݷ���",
+        "Python"
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd03a"
+      },
+      "isbn": "9787115428028",
+      "title": "Python��̣������ŵ�ʵ��",
+      "author": "����ˡ���ɪ˹",
+      "publisher": "�����ʵ������",
+      "category": "�����",
+      "price": 89.0,
+      "stock": 15,
+      "rating": 4.6,
+      "publish_date": {
+        "$date": "2023-02-28T16:00:00Z"
+      },
+      "borrow_count": 127,
+      "location": {
+        "floor": "��¥רҵͼ����",
+        "shelf": "A-07",
+        "copies": 2
+      },
+      "tags": [
+        "���",
+        "����",
+        "Python"
+      ],
+      "ebook_name": "ebook_1.pdf"
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd042"
+      },
+      "isbn": "9787111544937",
+      "title": "��������磺�Զ����·���",
+      "author": "James F. Kurose",
+      "publisher": "��е��ҵ������",
+      "category": "�����",
+      "price": 89.0,
+      "stock": 11,
+      "rating": 4.7,
+      "publish_date": {
+        "$date": "2018-05-31T16:00:00Z"
+      },
+      "borrow_count": 143,
+      "location": {
+        "floor": "��¥רҵͼ����",
+        "shelf": "A-02",
+        "copies": 1
+      },
+      "tags": [
+        "����",
+        "�̲�"
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd041"
+      },
+      "isbn": "9787115478795",
+      "title": "����ԭ������2�棩",
+      "author": "Alfred V. Aho",
+      "publisher": "�����ʵ������",
+      "category": "�����",
+      "price": 99.0,
+      "stock": 6,
+      "rating": 4.5,
+      "publish_date": {
+        "$date": "2018-12-31T16:00:00Z"
+      },
+      "borrow_count": 74,
+      "location": {
+        "floor": "��¥רҵͼ����",
+        "shelf": "A-18",
+        "copies": 3
+      },
+      "tags": [
+        "����ԭ��",
+        "�̲�",
+        "����"
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd064"
+      },
+      "isbn": "9787302553219",
+      "title": "����ϵͳ�����9�棩",
+      "author": "Abraham Silberschatz",
+      "publisher": "�廪��ѧ������",
+      "category": "�����",
+      "price": 99.0,
+      "stock": 7,
+      "rating": 4.5,
+      "publish_date": {
+        "$date": "2017-12-31T16:00:00Z"
+      },
+      "borrow_count": 96,
+      "location": {
+        "floor": "��¥רҵͼ����",
+        "shelf": "A-03",
+        "copies": 3
+      },
+      "tags": [
+        "����ϵͳ",
+        "�̲�"
+      ]
+    }
+  ]
+}
+{
+  "query": "���ǩ",
+  "filter": {
+    "tags": {
+      "$all": [
+        "���",
+        "����"
+      ]
+    }
+  },
+  "count": 1,
+  "rows": [
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd03a"
+      },
+      "isbn": "9787115428028",
+      "title": "Python��̣������ŵ�ʵ��",
+      "author": "����ˡ���ɪ˹",
+      "publisher": "�����ʵ������",
+      "category": "�����",
+      "price": 89.0,
+      "stock": 15,
+      "rating": 4.6,
+      "publish_date": {
+        "$date": "2023-02-28T16:00:00Z"
+      },
+      "borrow_count": 127,
+      "location": {
+        "floor": "��¥רҵͼ����",
+        "shelf": "A-07",
+        "copies": 2
+      },
+      "tags": [
+        "���",
+        "����",
+        "Python"
+      ],
+      "ebook_name": "ebook_1.pdf"
+    }
+  ]
+}
+{
+  "query": "����ģ��",
+  "filter": {
+    "title": {
+      "$regex": "Python",
+      "$options": "i"
+    }
+  },
+  "count": 2,
+  "rows": [
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd03a"
+      },
+      "isbn": "9787115428028",
+      "title": "Python��̣������ŵ�ʵ��",
+      "author": "����ˡ���ɪ˹",
+      "publisher": "�����ʵ������",
+      "category": "�����",
+      "price": 89.0,
+      "stock": 15,
+      "rating": 4.6,
+      "publish_date": {
+        "$date": "2023-02-28T16:00:00Z"
+      },
+      "borrow_count": 127,
+      "location": {
+        "floor": "��¥רҵͼ����",
+        "shelf": "A-07",
+        "copies": 2
+      },
+      "tags": [
+        "���",
+        "����",
+        "Python"
+      ],
+      "ebook_name": "ebook_1.pdf"
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd061"
+      },
+      "isbn": "9787115428004",
+      "title": "Python���ݷ���",
+      "author": "Wes McKinney",
+      "publisher": "�����ʵ������",
+      "category": "�����",
+      "price": 79.0,
+      "stock": 12,
+      "rating": 4.5,
+      "publish_date": {
+        "$date": "2018-07-31T16:00:00Z"
+      },
+      "borrow_count": 145,
+      "location": {
+        "floor": "��¥רҵͼ����",
+        "shelf": "A-12",
+        "copies": 3
+      },
+      "tags": [
+        "���",
+        "���ݷ���",
+        "Python"
+      ]
+    }
+  ]
+}
+{
+  "query": "�������",
+  "filter": {
+    "publish_date": {
+      "$gte": {
+        "$date": "2020-01-01T00:00:00Z"
+      },
+      "$lt": {
+        "$date": "2024-01-01T00:00:00Z"
+      }
+    }
+  },
+  "count": 9,
+  "rows": [
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd048"
+      },
+      "isbn": "9787532718758",
+      "title": "Ʈ",
+      "author": "������ء����ж�",
+      "publisher": "���ֳ�����",
+      "category": "��ѧ",
+      "price": 68.0,
+      "stock": 5,
+      "rating": 4.5,
+      "publish_date": {
+        "$date": "2020-02-29T16:00:00Z"
+      },
+      "borrow_count": 76,
+      "location": {
+        "floor": "һ¥����ͼ����",
+        "shelf": "B-03",
+        "copies": 3
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd04c"
+      },
+      "isbn": "9787302423282",
+      "title": "����ѧԭ������7�棩",
+      "author": "N.�������������",
+      "publisher": "������ѧ������",
+      "category": "���ù���",
+      "price": 128.0,
+      "stock": 14,
+      "rating": 4.4,
+      "publish_date": {
+        "$date": "2020-03-31T16:00:00Z"
+      },
+      "borrow_count": 118,
+      "location": {
+        "floor": "��¥רҵͼ����",
+        "shelf": "C-04",
+        "copies": 3
+      },
+      "tags": [
+        "����ѧ",
+        "�̲�",
+        "����"
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd03e"
+      },
+      "isbn": "9787115293800",
+      "title": "JavaScript�߼�������ƣ���4�棩",
+      "author": "Matt Frisbie",
+      "publisher": "�����ʵ������",
+      "category": "�����",
+      "price": 109.0,
+      "stock": 17,
+      "rating": 4.4,
+      "publish_date": {
+        "$date": "2020-05-31T16:00:00Z"
+      },
+      "borrow_count": 134,
+      "location": {
+        "floor": "��¥רҵͼ����",
+        "shelf": "A-02",
+        "copies": 3
+      },
+      "tags": [
+        "JavaScript",
+        "ǰ��",
+        "����"
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd050"
+      },
+      "isbn": "9787300287357",
+      "title": "�г�Ӫ��ԭ��",
+      "author": "�����ա�������",
+      "publisher": "�й������ѧ������",
+      "category": "���ù���",
+      "price": 85.0,
+      "stock": 10,
+      "rating": 4.4,
+      "publish_date": {
+        "$date": "2020-08-31T16:00:00Z"
+      },
+      "borrow_count": 103,
+      "location": {
+        "floor": "��¥רҵͼ����",
+        "shelf": "C-11",
+        "copies": 3
+      },
+      "tags": [
+        "Ӫ��",
+        "�̲�"
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd058"
+      },
+      "isbn": "9787544674585",
+      "title": "ţ��Ӣ���÷�ָ��",
+      "author": "Michael Swan",
+      "publisher": "�����ѧ���о�������",
+      "category": "����",
+      "price": 118.0,
+      "stock": 3,
+      "rating": 4.6,
+      "publish_date": {
+        "$date": "2020-12-31T16:00:00Z"
+      },
+      "borrow_count": 39,
+      "location": {
+        "floor": "��¥����ͼ����",
+        "shelf": "E-17",
+        "copies": 1
+      },
+      "tags": [
+        "Ӣ��",
+        "�ʵ�",
+        "������"
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd040"
+      },
+      "isbn": "9787111666787",
+      "title": "���ݿ�ϵͳ�����7�棩",
+      "author": "Abraham Silberschatz",
+      "publisher": "��е��ҵ������",
+      "category": "�����",
+      "price": 128.0,
+      "stock": 9,
+      "rating": 4.6,
+      "publish_date": {
+        "$date": "2021-06-30T16:00:00Z"
+      },
+      "borrow_count": 112,
+      "location": {
+        "floor": "��¥רҵͼ����",
+        "shelf": "A-19",
+        "copies": 1
+      },
+      "tags": [
+        "���ݿ�",
+        "�̲�",
+        "����"
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd04e"
+      },
+      "isbn": "9787521711881",
+      "title": "��ҵ��ҵ����",
+      "author": "�Ŵ�ҵ",
+      "publisher": "������ѧ������",
+      "category": "���ù���",
+      "price": 59.0,
+      "stock": 6,
+      "rating": 4.0,
+      "publish_date": {
+        "$date": "2021-08-31T16:00:00Z"
+      },
+      "borrow_count": 45,
+      "location": {
+        "floor": "��¥רҵͼ����",
+        "shelf": "C-19",
+        "copies": 1
+      },
+      "tags": [
+        "����",
+        "��ҵ"
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd03b"
+      },
+      "isbn": "9787121362726",
+      "title": "������������ϵͳ����3�棩",
+      "author": "Randal E. Bryant",
+      "publisher": "���ӹ�ҵ������",
+      "category": "�����",
+      "price": 139.0,
+      "stock": 8,
+      "rating": 4.8,
+      "publish_date": {
+        "$date": "2021-11-14T16:00:00Z"
+      },
+      "borrow_count": 156,
+      "location": {
+        "floor": "��¥רҵͼ����",
+        "shelf": "A-03",
+        "copies": 2
+      },
+      "tags": [
+        "�����",
+        "��ϵ�ṹ",
+        "����"
+      ],
+      "ebook_name": "ebook_2.pdf"
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd03a"
+      },
+      "isbn": "9787115428028",
+      "title": "Python��̣������ŵ�ʵ��",
+      "author": "����ˡ���ɪ˹",
+      "publisher": "�����ʵ������",
+      "category": "�����",
+      "price": 89.0,
+      "stock": 15,
+      "rating": 4.6,
+      "publish_date": {
+        "$date": "2023-02-28T16:00:00Z"
+      },
+      "borrow_count": 127,
+      "location": {
+        "floor": "��¥רҵͼ����",
+        "shelf": "A-07",
+        "copies": 2
+      },
+      "tags": [
+        "���",
+        "����",
+        "Python"
+      ],
+      "ebook_name": "ebook_1.pdf"
+    }
+  ]
+}
+{
+  "query": "ȱ�ٱ�ǩ",
+  "filter": {
+    "tags": {
+      "$exists": false
+    }
+  },
+  "count": 4,
+  "rows": [
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd047"
+      },
+      "isbn": "9787532754808",
+      "title": "����¶�",
+      "author": "�����ǡ�������˹",
+      "publisher": "�Ϻ����湫˾",
+      "category": "��ѧ",
+      "price": 55.0,
+      "stock": 12,
+      "rating": 4.6,
+      "publish_date": {
+        "$date": "2017-03-31T16:00:00Z"
+      },
+      "borrow_count": 142,
+      "location": {
+        "floor": "һ¥����ͼ����",
+        "shelf": "B-18",
+        "copies": 3
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd048"
+      },
+      "isbn": "9787532718758",
+      "title": "Ʈ",
+      "author": "������ء����ж�",
+      "publisher": "���ֳ�����",
+      "category": "��ѧ",
+      "price": 68.0,
+      "stock": 5,
+      "rating": 4.5,
+      "publish_date": {
+        "$date": "2020-02-29T16:00:00Z"
+      },
+      "borrow_count": 76,
+      "location": {
+        "floor": "һ¥����ͼ����",
+        "shelf": "B-03",
+        "copies": 3
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd053"
+      },
+      "isbn": "9787518910041",
+      "title": "��¶�֤��",
+      "author": "������˹����˹��",
+      "publisher": "�й������ѧ������",
+      "category": "��ѧ",
+      "price": 48.0,
+      "stock": 4,
+      "rating": 4.8,
+      "publish_date": {
+        "$date": "2016-07-31T16:00:00Z"
+      },
+      "borrow_count": 61,
+      "location": {
+        "floor": "��¥רҵͼ����",
+        "shelf": "D-02",
+        "copies": 1
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ecdab9c714405fd06b"
+      },
+      "isbn": "9787544285452",
+      "title": "������",
+      "author": "������������",
+      "publisher": "�Ϻ����ĳ�����",
+      "category": "��ѧ",
+      "price": 36.0,
+      "stock": 8,
+      "rating": 4.4,
+      "publish_date": {
+        "$date": "2013-07-31T16:00:00Z"
+      },
+      "borrow_count": 71,
+      "location": {
+        "floor": "һ¥����ͼ����",
+        "shelf": "B-17",
+        "copies": 2
+      }
+    }
+  ]
+}
+[
+  {
+    "title": "ʷ�ǣ�ȫʮ�ᣩ",
+    "author": "˾��Ǩ",
+    "rating": 4.9
+  },
+  {
+    "title": "����",
+    "author": "�໪",
+    "rating": 4.9
+  },
+  {
+    "title": "��¶�֤��",
+    "author": "������˹����˹��",
+    "rating": 4.8
+  },
+  {
+    "title": "Χ��",
+    "author": "Ǯ����",
+    "rating": 4.8
+  },
+  {
+    "title": "ƽ�������磨ȫ������",
+    "author": "·ң",
+    "rating": 4.8
+  },
+  {
+    "title": "������������ϵͳ����3�棩",
+    "author": "Randal E. Bryant",
+    "rating": 4.8
+  },
+  {
+    "title": "�����ʷ",
+    "author": "���߶���������",
+    "rating": 4.7
+  },
+  {
+    "title": "С����",
+    "author": "�����򡤵¡�ʥ����������",
+    "rating": 4.7
+  },
+  {
+    "title": "��¥��",
+    "author": "��ѩ��",
+    "rating": 4.7
+  },
+  {
+    "title": "��������磺�Զ����·���",
+    "author": "James F. Kurose",
+    "rating": 4.7
+  }
+]
+
+�ǻ�ͼ���������Դƽ̨
+1 ͼ���ҳ 2 ���߷�ҳ 3 ������� 4 ����ͳ�� 5 ѧԺǰ�� 6 �������� 7 ��������
+8 �������ͳ�� 9 �ϴ��ļ� 10 �ļ��嵥 11 ���������� 12 ����ͼ�� 13 ��������
+14 �޸�ͼ�� 15 �޸Ķ��� 16 ɾ��ͼ�� 17 ɾ������ 18 ���� 19 ���� 20 ����ͳ�� 21 ������� 0 �˳�
+ѡ��[
+  {
+    "_id": "��ʷ",
+    "count": 5,
+    "avg_price": 95.6,
+    "avg_rating": 4.66
+  },
+  {
+    "_id": "����",
+    "count": 5,
+    "avg_price": 59.0,
+    "avg_rating": 4.32
+  },
+  {
+    "_id": "��ѧ",
+    "count": 6,
+    "avg_price": 40.666666666666664,
+    "avg_rating": 4.433333333333334
+  },
+  {
+    "_id": "��ѧ",
+    "count": 12,
+    "avg_price": 47.01666666666667,
+    "avg_rating": 4.625
+  },
+  {
+    "_id": "���ù���",
+    "count": 7,
+    "avg_price": 90.85714285714286,
+    "avg_rating": 4.3
+  },
+  {
+    "_id": "�����",
+    "count": 15,
+    "avg_price": 89.53333333333333,
+    "avg_rating": 4.533333333333333
+  }
+]
+
+�ǻ�ͼ���������Դƽ̨
+1 ͼ���ҳ 2 ���߷�ҳ 3 ������� 4 ����ͳ�� 5 ѧԺǰ�� 6 �������� 7 ��������
+8 �������ͳ�� 9 �ϴ��ļ� 10 �ļ��嵥 11 ���������� 12 ����ͼ�� 13 ��������
+14 �޸�ͼ�� 15 �޸Ķ��� 16 ɾ��ͼ�� 17 ɾ������ 18 ���� 19 ���� 20 ����ͳ�� 21 ������� 0 �˳�
+ѡ��[
+  {
+    "_id": "���ù���ѧԺ",
+    "count": 500
+  },
+  {
+    "_id": "�����ѧԺ",
+    "count": 500
+  },
+  {
+    "_id": "��ʷ�Ļ�ѧԺ",
+    "count": 400
+  },
+  {
+    "_id": "�����ѧԺ",
+    "count": 400
+  },
+  {
+    "_id": "��ѧ��ͳ��ѧԺ",
+    "count": 400
+  }
+]
+
+�ǻ�ͼ���������Դƽ̨
+1 ͼ���ҳ 2 ���߷�ҳ 3 ������� 4 ����ͳ�� 5 ѧԺǰ�� 6 �������� 7 ��������
+8 �������ͳ�� 9 �ϴ��ļ� 10 �ļ��嵥 11 ���������� 12 ����ͼ�� 13 ��������
+14 �޸�ͼ�� 15 �޸Ķ��� 16 ɾ��ͼ�� 17 ɾ������ 18 ���� 19 ���� 20 ����ͳ�� 21 ������� 0 �˳�
+ѡ��[
+  {
+    "_id": "2023-01",
+    "count": 86
+  },
+  {
+    "_id": "2023-02",
+    "count": 76
+  },
+  {
+    "_id": "2023-03",
+    "count": 86
+  },
+  {
+    "_id": "2023-04",
+    "count": 82
+  },
+  {
+    "_id": "2023-05",
+    "count": 85
+  },
+  {
+    "_id": "2023-06",
+    "count": 82
+  },
+  {
+    "_id": "2023-07",
+    "count": 85
+  },
+  {
+    "_id": "2023-08",
+    "count": 85
+  },
+  {
+    "_id": "2023-09",
+    "count": 83
+  },
+  {
+    "_id": "2023-10",
+    "count": 85
+  },
+  {
+    "_id": "2023-11",
+    "count": 82
+  },
+  {
+    "_id": "2023-12",
+    "count": 85
+  },
+  {
+    "_id": "2024-01",
+    "count": 85
+  },
+  {
+    "_id": "2024-02",
+    "count": 80
+  },
+  {
+    "_id": "2024-03",
+    "count": 85
+  },
+  {
+    "_id": "2024-04",
+    "count": 82
+  },
+  {
+    "_id": "2024-05",
+    "count": 86
+  },
+  {
+    "_id": "2024-06",
+    "count": 82
+  },
+  {
+    "_id": "2024-07",
+    "count": 85
+  },
+  {
+    "_id": "2024-08",
+    "count": 85
+  },
+  {
+    "_id": "2024-09",
+    "count": 82
+  },
+  {
+    "_id": "2024-10",
+    "count": 85
+  },
+  {
+    "_id": "2024-11",
+    "count": 83
+  },
+  {
+    "_id": "2024-12",
+    "count": 85
+  },
+  {
+    "_id": "2025-01",
+    "count": 85
+  },
+  {
+    "_id": "2025-02",
+    "count": 77
+  },
+  {
+    "_id": "2025-03",
+    "count": 85
+  },
+  {
+    "_id": "2025-04",
+    "count": 82
+  },
+  {
+    "_id": "2025-05",
+    "count": 85
+  },
+  {
+    "_id": "2025-06",
+    "count": 83
+  },
+  {
+    "_id": "2025-07",
+    "count": 85
+  },
+  {
+    "_id": "2025-08",
+    "count": 85
+  },
+  {
+    "_id": "2025-09",
+    "count": 82
+  },
+  {
+    "_id": "2025-10",
+    "count": 85
+  },
+  {
+    "_id": "2025-11",
+    "count": 83
+  },
+  {
+    "_id": "2025-12",
+    "count": 76
+  }
+]
+
+�ǻ�ͼ���������Դƽ̨
+1 ͼ���ҳ 2 ���߷�ҳ 3 ������� 4 ����ͳ�� 5 ѧԺǰ�� 6 �������� 7 ��������
+8 �������ͳ�� 9 �ϴ��ļ� 10 �ļ��嵥 11 ���������� 12 ����ͼ�� 13 ��������
+14 �޸�ͼ�� 15 �޸Ķ��� 16 ɾ��ͼ�� 17 ɾ������ 18 ���� 19 ���� 20 ����ͳ�� 21 ������� 0 �˳�
+ѡ��[
+  {
+    "_id": "9787020002207",
+    "count": 60,
+    "title": "Χ��",
+    "location": {
+      "floor": "һ¥����ͼ����",
+      "shelf": "B-04",
+      "copies": 3
+    }
+  },
+  {
+    "_id": "9787020024759",
+    "count": 60,
+    "title": "�߳�",
+    "location": {
+      "floor": "һ¥����ͼ����",
+      "shelf": "B-20",
+      "copies": 1
+    }
+  },
+  {
+    "_id": "9787020042033",
+    "count": 60,
+    "title": "��¥��",
+    "location": {
+      "floor": "һ¥����ͼ����",
+      "shelf": "B-19",
+      "copies": 1
+    }
+  },
+  {
+    "_id": "9787040396614",
+    "count": 60,
+    "title": "�ߵ���ѧ���ϲᣩ",
+    "location": {
+      "floor": "��¥רҵͼ����",
+      "shelf": "D-15",
+      "copies": 3
+    }
+  },
+  {
+    "_id": "9787040396621",
+    "count": 60,
+    "title": "���Դ�������6�棩",
+    "location": {
+      "floor": "��¥רҵͼ����",
+      "shelf": "D-08",
+      "copies": 3
+    }
+  },
+  {
+    "_id": "9787040405241",
+    "count": 60,
+    "title": "��ѧ֮��",
+    "location": {
+      "floor": "��¥רҵͼ����",
+      "shelf": "D-04",
+      "copies": 3
+    }
+  },
+  {
+    "_id": "9787101003048",
+    "count": 60,
+    "title": "ʷ�ǣ�ȫʮ�ᣩ",
+    "location": {
+      "floor": "һ¥����ͼ����",
+      "shelf": "F-01",
+      "copies": 2
+    }
+  },
+  {
+    "_id": "9787108009821",
+    "count": 60,
+    "title": "�й�ͨʷ",
+    "location": {
+      "floor": "һ¥����ͼ����",
+      "shelf": "F-10",
+      "copies": 2
+    }
+  },
+  {
+    "_id": "9787111407010",
+    "count": 60,
+    "title": "��������֮��",
+    "location": {
+      "floor": "��¥רҵͼ����",
+      "shelf": "A-05",
+      "copies": 3
+    }
+  },
+  {
+    "_id": "9787111544937",
+    "count": 60,
+    "title": "��������磺�Զ����·���",
+    "location": {
+      "floor": "��¥רҵͼ����",
+      "shelf": "A-02",
+      "copies": 1
+    }
+  }
+]
+
+�ǻ�ͼ���������Դƽ̨
+1 ͼ���ҳ 2 ���߷�ҳ 3 ������� 4 ����ͳ�� 5 ѧԺǰ�� 6 �������� 7 ��������
+8 �������ͳ�� 9 �ϴ��ļ� 10 �ļ��嵥 11 ���������� 12 ����ͼ�� 13 ��������
+14 �޸�ͼ�� 15 �޸Ķ��� 16 ɾ��ͼ�� 17 ɾ������ 18 ���� 19 ���� 20 ����ͳ�� 21 ������� 0 �˳�
+ѡ��[
+  {
+    "_id": "��ʷ",
+    "count": 5,
+    "avg_price": 95.6,
+    "avg_rating": 4.66
+  },
+  {
+    "_id": "����",
+    "count": 5,
+    "avg_price": 59.0,
+    "avg_rating": 4.32
+  },
+  {
+    "_id": "��ѧ",
+    "count": 6,
+    "avg_price": 40.666666666666664,
+    "avg_rating": 4.433333333333334
+  },
+  {
+    "_id": "��ѧ",
+    "count": 12,
+    "avg_price": 47.01666666666667,
+    "avg_rating": 4.625
+  },
+  {
+    "_id": "���ù���",
+    "count": 7,
+    "avg_price": 90.85714285714286,
+    "avg_rating": 4.3
+  },
+  {
+    "_id": "�����",
+    "count": 15,
+    "avg_price": 89.53333333333333,
+    "avg_rating": 4.533333333333333
+  }
+]
+
+�ǻ�ͼ���������Դƽ̨
+1 ͼ���ҳ 2 ���߷�ҳ 3 ������� 4 ����ͳ�� 5 ѧԺǰ�� 6 �������� 7 ��������
+8 �������ͳ�� 9 �ϴ��ļ� 10 �ļ��嵥 11 ���������� 12 ����ͼ�� 13 ��������
+14 �޸�ͼ�� 15 �޸Ķ��� 16 ɾ��ͼ�� 17 ɾ������ 18 ���� 19 ���� 20 ����ͳ�� 21 ������� 0 �˳�
+ѡ��[
+  {
+    "_id": {
+      "$oid": "6aedd3ee75338b33a25d9337"
+    },
+    "filename": "ebook_1.pdf",
+    "metadata": {
+      "isbn": "9787115428028",
+      "type": "pdf",
+      "original_name": "ebook_1.pdf",
+      "sha256": "f4eb722d8cb28098baecdbf1716761ea0bec85ef82124f139d8b9a909fb44982"
+    },
+    "length": 39837,
+    "uploadDate": {
+      "$date": "2026-11-06T13:19:42.208Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ee75338b33a25d933a"
+    },
+    "filename": "ebook_2.pdf",
+    "metadata": {
+      "isbn": "9787121362726",
+      "type": "pdf",
+      "original_name": "ebook_2.pdf",
+      "sha256": "3ab077c4635dab0fb58fb3f46530c8d8d92a9db21e1beeddf64e4bd904d33a66"
+    },
+    "length": 38524,
+    "uploadDate": {
+      "$date": "2026-11-06T13:19:42.211Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ee75338b33a25d933d"
+    },
+    "filename": "ebook_3.pdf",
+    "metadata": {
+      "isbn": "9787115546081",
+      "type": "pdf",
+      "original_name": "ebook_3.pdf",
+      "sha256": "490485d6ca6a7cf0ba1fe69911526bd00398cb20e0a0a075d53b3f4325ce0fdb"
+    },
+    "length": 37004,
+    "uploadDate": {
+      "$date": "2026-11-06T13:19:42.213Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ee75338b33a25d9340"
+    },
+    "filename": "cover_1.png",
+    "metadata": {
+      "isbn": "9787115428028",
+      "type": "png",
+      "original_name": "cover_1.png",
+      "sha256": "54f19fc0a1984b880a4833a9c56d974ac80e08ab36d8beb3480566775993cd19"
+    },
+    "length": 23611,
+    "uploadDate": {
+      "$date": "2026-11-06T13:19:42.216Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ee75338b33a25d9343"
+    },
+    "filename": "cover_2.png",
+    "metadata": {
+      "isbn": "9787121362726",
+      "type": "png",
+      "original_name": "cover_2.png",
+      "sha256": "350448ceb7d6c0b6a7a7b03b08b36e4fe0291f9d7b7475412263b4812a81aad9"
+    },
+    "length": 26053,
+    "uploadDate": {
+      "$date": "2026-11-06T13:19:42.219Z"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ee75338b33a25d9346"
+    },
+    "filename": "cover_3.png",
+    "metadata": {
+      "isbn": "9787115546081",
+      "type": "png",
+      "original_name": "cover_3.png",
+      "sha256": "b3a36c3421bada9cb4abe80f7c5fa689d7297a40cc5b2b022e1fe953cd28f307"
+    },
+    "length": 15171,
+    "uploadDate": {
+      "$date": "2026-11-06T13:19:42.221Z"
+    }
+  }
+]
+
+�ǻ�ͼ���������Դƽ̨
+1 ͼ���ҳ 2 ���߷�ҳ 3 ������� 4 ����ͳ�� 5 ѧԺǰ�� 6 �������� 7 ��������
+8 �������ͳ�� 9 �ϴ��ļ� 10 �ļ��嵥 11 ���������� 12 ����ͼ�� 13 ��������
+14 �޸�ͼ�� 15 �޸Ķ��� 16 ɾ��ͼ�� 17 ɾ������ 18 ���� 19 ���� 20 ����ͳ�� 21 ������� 0 �˳�
+ѡ�񣺶���֤�ţ�ISBN������ʧ�ܣ� Transaction numbers are only allowed on a replica set member or mongos, full error: {'ok': 0.0, 'errmsg': 'Transaction numbers are only allowed on a replica set member or mongos', 'code': 20, 'codeName': 'IllegalOperation'}
+
+�ǻ�ͼ���������Դƽ̨
+1 ͼ���ҳ 2 ���߷�ҳ 3 ������� 4 ����ͳ�� 5 ѧԺǰ�� 6 �������� 7 ��������
+8 �������ͳ�� 9 �ϴ��ļ� 10 �ļ��嵥 11 ���������� 12 ����ͼ�� 13 ��������
+14 �޸�ͼ�� 15 �޸Ķ��� 16 ɾ��ͼ�� 17 ɾ������ 18 ���� 19 ���� 20 ����ͳ�� 21 ������� 0 �˳�
+ѡ��[
+  {
+    "_id": {
+      "$oid": "6aedd3ee75338b33a25d934b"
+    },
+    "at": {
+      "$date": "2026-11-06T13:19:42.228Z"
+    },
+    "actor": "operator",
+    "action": "export",
+    "collection": "fs.files",
+    "detail": {
+      "filename": "ebook_3.pdf",
+      "bytes": 37004
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ee75338b33a25d934a"
+    },
+    "at": {
+      "$date": "2026-11-06T13:19:42.226Z"
+    },
+    "actor": "operator",
+    "action": "export",
+    "collection": "fs.files",
+    "detail": {
+      "filename": "ebook_2.pdf",
+      "bytes": 38524
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ee75338b33a25d9349"
+    },
+    "at": {
+      "$date": "2026-11-06T13:19:42.224Z"
+    },
+    "actor": "operator",
+    "action": "export",
+    "collection": "fs.files",
+    "detail": {
+      "filename": "ebook_1.pdf",
+      "bytes": 39837
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ee75338b33a25d9348"
+    },
+    "at": {
+      "$date": "2026-11-06T13:19:42.221Z"
+    },
+    "actor": "operator",
+    "action": "upload",
+    "collection": "fs.files",
+    "detail": {
+      "id": "6aedd3ee75338b33a25d9346",
+      "filename": "cover_3.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ee75338b33a25d9345"
+    },
+    "at": {
+      "$date": "2026-11-06T13:19:42.219Z"
+    },
+    "actor": "operator",
+    "action": "upload",
+    "collection": "fs.files",
+    "detail": {
+      "id": "6aedd3ee75338b33a25d9343",
+      "filename": "cover_2.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ee75338b33a25d9342"
+    },
+    "at": {
+      "$date": "2026-11-06T13:19:42.216Z"
+    },
+    "actor": "operator",
+    "action": "upload",
+    "collection": "fs.files",
+    "detail": {
+      "id": "6aedd3ee75338b33a25d9340",
+      "filename": "cover_1.png"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ee75338b33a25d933f"
+    },
+    "at": {
+      "$date": "2026-11-06T13:19:42.214Z"
+    },
+    "actor": "operator",
+    "action": "upload",
+    "collection": "fs.files",
+    "detail": {
+      "id": "6aedd3ee75338b33a25d933d",
+      "filename": "ebook_3.pdf"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ee75338b33a25d933c"
+    },
+    "at": {
+      "$date": "2026-11-06T13:19:42.211Z"
+    },
+    "actor": "operator",
+    "action": "upload",
+    "collection": "fs.files",
+    "detail": {
+      "id": "6aedd3ee75338b33a25d933a",
+      "filename": "ebook_2.pdf"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ee75338b33a25d9339"
+    },
+    "at": {
+      "$date": "2026-11-06T13:19:42.208Z"
+    },
+    "actor": "operator",
+    "action": "upload",
+    "collection": "fs.files",
+    "detail": {
+      "id": "6aedd3ee75338b33a25d9337",
+      "filename": "ebook_1.pdf"
+    }
+  },
+  {
+    "_id": {
+      "$oid": "6aedd3ecdab9c714405fdc42"
+    },
+    "at": {
+      "$date": "2026-11-06T13:19:40.953Z"
+    },
+    "actor": "operator",
+    "action": "import",
+    "collection": "all",
+    "detail": {
+      "books": 50,
+      "readers": 30,
+      "borrow_logs": 3000
+    }
+  }
+]
+
+�ǻ�ͼ���������Դƽ̨
+1 ͼ���ҳ 2 ���߷�ҳ 3 ������� 4 ����ͳ�� 5 ѧԺǰ�� 6 �������� 7 ��������
+8 �������ͳ�� 9 �ϴ��ļ� 10 �ļ��嵥 11 ���������� 12 ����ͼ�� 13 ��������
+14 �޸�ͼ�� 15 �޸Ķ��� 16 ɾ��ͼ�� 17 ɾ������ 18 ���� 19 ���� 20 ����ͳ�� 21 ������� 0 �˳�
+ѡ��

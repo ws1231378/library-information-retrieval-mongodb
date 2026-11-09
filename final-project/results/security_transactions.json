@@ -1,0 +1,12 @@
+{
+  "reader_count": 50,
+  "read_only_write_denied": 13,
+  "double_return_rejected": true,
+  "transaction_borrow_return": "passed; baseline restored",
+  "reader_crud": "passed",
+  "counts": {
+    "books": 50,
+    "readers": 30,
+    "borrow_logs": 3000
+  }
+}

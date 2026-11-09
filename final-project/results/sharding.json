@@ -1,0 +1,703 @@
+{
+  "counts": {
+    "books": 50,
+    "readers": 30,
+    "borrow_logs": 3000
+  },
+  "shards": {
+    "shards": [
+      {
+        "_id": "shardA",
+        "host": "shardA/127.0.0.1:28301",
+        "state": 1,
+        "topologyTime": {
+          "$timestamp": {
+            "t": 1793971305,
+            "i": 6
+          }
+        },
+        "replSetConfigVersion": -1
+      },
+      {
+        "_id": "shardB",
+        "host": "shardB/127.0.0.1:28302",
+        "state": 1,
+        "topologyTime": {
+          "$timestamp": {
+            "t": 1793971305,
+            "i": 24
+          }
+        },
+        "replSetConfigVersion": -1
+      }
+    ],
+    "ok": 1.0,
+    "$clusterTime": {
+      "clusterTime": {
+        "$timestamp": {
+          "t": 1793971332,
+          "i": 13
+        }
+      },
+      "signature": {
+        "hash": {
+          "$binary": {
+            "base64": "avrNI4Qp+/wsNETgpmwfO5qcyb0=",
+            "subType": "00"
+          }
+        },
+        "keyId": 7705048041987768344
+      }
+    },
+    "operationTime": {
+      "$timestamp": {
+        "t": 1793971332,
+        "i": 13
+      }
+    }
+  },
+  "distribution": [
+    {
+      "ns": "smart_library.borrow_logs",
+      "shard": "shardA",
+      "host": "LAPTOP-P4DMTM0L:28301",
+      "localTime": {
+        "$date": "2026-11-06T13:22:12.380Z"
+      },
+      "count": 1300
+    },
+    {
+      "ns": "smart_library.borrow_logs",
+      "shard": "shardB",
+      "host": "LAPTOP-P4DMTM0L:28302",
+      "localTime": {
+        "$date": "2026-11-06T13:22:12.380Z"
+      },
+      "count": 1700
+    }
+  ],
+  "chunks": [
+    {
+      "_id": {
+        "$oid": "6aedd46a6f1aa074176d59df"
+      },
+      "uuid": {
+        "$binary": {
+          "base64": "rY0XaBIYRzW0uRn+z9czCg==",
+          "subType": "04"
+        }
+      },
+      "min": {
+        "reader_card": {
+          "$minKey": 1
+        }
+      },
+      "max": {
+        "reader_card": 0
+      },
+      "shard": "shardB",
+      "lastmod": {
+        "$timestamp": {
+          "t": 1,
+          "i": 0
+        }
+      },
+      "onCurrentShardSince": {
+        "$timestamp": {
+          "t": 1793971305,
+          "i": 65
+        }
+      },
+      "history": [
+        {
+          "validAfter": {
+            "$timestamp": {
+              "t": 1793971305,
+              "i": 65
+            }
+          },
+          "shard": "shardB"
+        }
+      ]
+    },
+    {
+      "_id": {
+        "$oid": "6aedd46a6f1aa074176d59e0"
+      },
+      "uuid": {
+        "$binary": {
+          "base64": "rY0XaBIYRzW0uRn+z9czCg==",
+          "subType": "04"
+        }
+      },
+      "min": {
+        "reader_card": 0
+      },
+      "max": {
+        "reader_card": {
+          "$maxKey": 1
+        }
+      },
+      "shard": "shardA",
+      "lastmod": {
+        "$timestamp": {
+          "t": 1,
+          "i": 1
+        }
+      },
+      "onCurrentShardSince": {
+        "$timestamp": {
+          "t": 1793971305,
+          "i": 65
+        }
+      },
+      "history": [
+        {
+          "validAfter": {
+            "$timestamp": {
+              "t": 1793971305,
+              "i": 65
+            }
+          },
+          "shard": "shardA"
+        }
+      ]
+    }
+  ],
+  "balancer": {
+    "mode": "full",
+    "inBalancerRound": false,
+    "numBalancerRounds": 4,
+    "term": 1,
+    "ok": 1.0,
+    "$clusterTime": {
+      "clusterTime": {
+        "$timestamp": {
+          "t": 1793971332,
+          "i": 13
+        }
+      },
+      "signature": {
+        "hash": {
+          "$binary": {
+            "base64": "avrNI4Qp+/wsNETgpmwfO5qcyb0=",
+            "subType": "00"
+          }
+        },
+        "keyId": 7705048041987768344
+      }
+    },
+    "operationTime": {
+      "$timestamp": {
+        "t": 1793971331,
+        "i": 1
+      }
+    }
+  },
+  "cross_shard": {
+    "queryPlanner": {
+      "winningPlan": {
+        "stage": "SHARD_MERGE",
+        "shards": [
+          {
+            "explainVersion": "1",
+            "shardName": "shardA",
+            "connectionString": "shardA/127.0.0.1:28301",
+            "serverInfo": {
+              "host": "LAPTOP-P4DMTM0L",
+              "port": 28301,
+              "version": "8.0.26",
+              "gitVersion": "a2c24805265db119cc39f2f54e067b4294a4ddd2"
+            },
+            "namespace": "smart_library.borrow_logs",
+            "parsedQuery": {
+              "status": {
+                "$eq": "借出"
+              }
+            },
+            "indexFilterSet": false,
+            "queryHash": "5D6543D9",
+            "planCacheShapeHash": "5D6543D9",
+            "planCacheKey": "405CB45D",
+            "optimizationTimeMillis": 0,
+            "maxIndexedOrSolutionsReached": false,
+            "maxIndexedAndSolutionsReached": false,
+            "maxScansToExplodeReached": false,
+            "prunedSimilarIndexes": false,
+            "winningPlan": {
+              "isCached": false,
+              "stage": "SHARDING_FILTER",
+              "inputStage": {
+                "stage": "COLLSCAN",
+                "filter": {
+                  "status": {
+                    "$eq": "借出"
+                  }
+                },
+                "direction": "forward"
+              }
+            },
+            "rejectedPlans": []
+          },
+          {
+            "explainVersion": "1",
+            "shardName": "shardB",
+            "connectionString": "shardB/127.0.0.1:28302",
+            "serverInfo": {
+              "host": "LAPTOP-P4DMTM0L",
+              "port": 28302,
+              "version": "8.0.26",
+              "gitVersion": "a2c24805265db119cc39f2f54e067b4294a4ddd2"
+            },
+            "namespace": "smart_library.borrow_logs",
+            "parsedQuery": {
+              "status": {
+                "$eq": "借出"
+              }
+            },
+            "indexFilterSet": false,
+            "queryHash": "5D6543D9",
+            "planCacheShapeHash": "5D6543D9",
+            "planCacheKey": "405CB45D",
+            "optimizationTimeMillis": 0,
+            "maxIndexedOrSolutionsReached": false,
+            "maxIndexedAndSolutionsReached": false,
+            "maxScansToExplodeReached": false,
+            "prunedSimilarIndexes": false,
+            "winningPlan": {
+              "isCached": false,
+              "stage": "SHARDING_FILTER",
+              "inputStage": {
+                "stage": "COLLSCAN",
+                "filter": {
+                  "status": {
+                    "$eq": "借出"
+                  }
+                },
+                "direction": "forward"
+              }
+            },
+            "rejectedPlans": []
+          }
+        ]
+      }
+    },
+    "executionStats": {
+      "nReturned": 429,
+      "executionTimeMillis": 1,
+      "totalKeysExamined": 0,
+      "totalDocsExamined": 3000,
+      "executionStages": {
+        "stage": "SHARD_MERGE",
+        "nReturned": 429,
+        "executionTimeMillis": 1,
+        "totalKeysExamined": 0,
+        "totalDocsExamined": 3000,
+        "totalChildMillis": 0,
+        "shards": [
+          {
+            "shardName": "shardA",
+            "executionSuccess": true,
+            "nReturned": 185,
+            "executionTimeMillis": 0,
+            "totalKeysExamined": 0,
+            "totalDocsExamined": 1300,
+            "executionStages": {
+              "isCached": false,
+              "stage": "SHARDING_FILTER",
+              "nReturned": 185,
+              "executionTimeMillisEstimate": 0,
+              "works": 1301,
+              "advanced": 185,
+              "needTime": 1115,
+              "needYield": 0,
+              "saveState": 0,
+              "restoreState": 0,
+              "isEOF": 1,
+              "chunkSkips": 0,
+              "inputStage": {
+                "stage": "COLLSCAN",
+                "filter": {
+                  "status": {
+                    "$eq": "借出"
+                  }
+                },
+                "nReturned": 185,
+                "executionTimeMillisEstimate": 0,
+                "works": 1301,
+                "advanced": 185,
+                "needTime": 1115,
+                "needYield": 0,
+                "saveState": 0,
+                "restoreState": 0,
+                "isEOF": 1,
+                "direction": "forward",
+                "docsExamined": 1300
+              }
+            }
+          },
+          {
+            "shardName": "shardB",
+            "executionSuccess": true,
+            "nReturned": 244,
+            "executionTimeMillis": 0,
+            "totalKeysExamined": 0,
+            "totalDocsExamined": 1700,
+            "executionStages": {
+              "isCached": false,
+              "stage": "SHARDING_FILTER",
+              "nReturned": 244,
+              "executionTimeMillisEstimate": 0,
+              "works": 1701,
+              "advanced": 244,
+              "needTime": 1456,
+              "needYield": 0,
+              "saveState": 0,
+              "restoreState": 0,
+              "isEOF": 1,
+              "chunkSkips": 0,
+              "inputStage": {
+                "stage": "COLLSCAN",
+                "filter": {
+                  "status": {
+                    "$eq": "借出"
+                  }
+                },
+                "nReturned": 244,
+                "executionTimeMillisEstimate": 0,
+                "works": 1701,
+                "advanced": 244,
+                "needTime": 1456,
+                "needYield": 0,
+                "saveState": 0,
+                "restoreState": 0,
+                "isEOF": 1,
+                "direction": "forward",
+                "docsExamined": 1700
+              }
+            }
+          }
+        ]
+      }
+    },
+    "queryShapeHash": "B9DCE18F67D19DB16FFD59B301B28F78EF1ED15B40300836C906E75E004197AE",
+    "serverInfo": {
+      "host": "LAPTOP-P4DMTM0L",
+      "port": 28417,
+      "version": "8.0.26",
+      "gitVersion": "a2c24805265db119cc39f2f54e067b4294a4ddd2"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "trySbeRestricted",
+      "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+    },
+    "command": {
+      "find": "borrow_logs",
+      "filter": {
+        "status": "借出"
+      },
+      "lsid": {
+        "id": {
+          "$binary": {
+            "base64": "9DwN3TxjQxu13oZcrDnsAQ==",
+            "subType": "04"
+          }
+        }
+      },
+      "$clusterTime": {
+        "clusterTime": {
+          "$timestamp": {
+            "t": 1793971332,
+            "i": 13
+          }
+        },
+        "signature": {
+          "hash": {
+            "$binary": {
+              "base64": "avrNI4Qp+/wsNETgpmwfO5qcyb0=",
+              "subType": "00"
+            }
+          },
+          "keyId": 7705048041987768344
+        }
+      },
+      "$db": "smart_library"
+    },
+    "ok": 1.0,
+    "$clusterTime": {
+      "clusterTime": {
+        "$timestamp": {
+          "t": 1793971332,
+          "i": 13
+        }
+      },
+      "signature": {
+        "hash": {
+          "$binary": {
+            "base64": "avrNI4Qp+/wsNETgpmwfO5qcyb0=",
+            "subType": "00"
+          }
+        },
+        "keyId": 7705048041987768344
+      }
+    },
+    "operationTime": {
+      "$timestamp": {
+        "t": 1793971332,
+        "i": 13
+      }
+    }
+  },
+  "targeted": {
+    "queryPlanner": {
+      "winningPlan": {
+        "stage": "SINGLE_SHARD",
+        "shards": [
+          {
+            "explainVersion": "1",
+            "shardName": "shardA",
+            "connectionString": "shardA/127.0.0.1:28301",
+            "serverInfo": {
+              "host": "LAPTOP-P4DMTM0L",
+              "port": 28301,
+              "version": "8.0.26",
+              "gitVersion": "a2c24805265db119cc39f2f54e067b4294a4ddd2"
+            },
+            "namespace": "smart_library.borrow_logs",
+            "parsedQuery": {
+              "reader_card": {
+                "$eq": "R20240001"
+              }
+            },
+            "indexFilterSet": false,
+            "queryHash": "4E642ED1",
+            "planCacheShapeHash": "4E642ED1",
+            "planCacheKey": "C0079A0C",
+            "optimizationTimeMillis": 6,
+            "maxIndexedOrSolutionsReached": false,
+            "maxIndexedAndSolutionsReached": false,
+            "maxScansToExplodeReached": false,
+            "prunedSimilarIndexes": false,
+            "winningPlan": {
+              "isCached": false,
+              "stage": "FETCH",
+              "filter": {
+                "reader_card": {
+                  "$eq": "R20240001"
+                }
+              },
+              "inputStage": {
+                "stage": "IXSCAN",
+                "keyPattern": {
+                  "reader_card": "hashed"
+                },
+                "indexName": "reader_card_hashed",
+                "isMultiKey": false,
+                "isUnique": false,
+                "isSparse": false,
+                "isPartial": false,
+                "indexVersion": 2,
+                "direction": "forward",
+                "indexBounds": {
+                  "reader_card": [
+                    "[29282448342491341, 29282448342491341]"
+                  ]
+                }
+              }
+            },
+            "rejectedPlans": [
+              {
+                "isCached": false,
+                "stage": "FETCH",
+                "inputStage": {
+                  "stage": "IXSCAN",
+                  "keyPattern": {
+                    "reader_card": 1,
+                    "borrow_date": -1
+                  },
+                  "indexName": "reader_card_1_borrow_date_-1",
+                  "isMultiKey": false,
+                  "multiKeyPaths": {
+                    "reader_card": [],
+                    "borrow_date": []
+                  },
+                  "isUnique": false,
+                  "isSparse": false,
+                  "isPartial": false,
+                  "indexVersion": 2,
+                  "direction": "forward",
+                  "indexBounds": {
+                    "reader_card": [
+                      "[\"R20240001\", \"R20240001\"]"
+                    ],
+                    "borrow_date": [
+                      "[MaxKey, MinKey]"
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "executionStats": {
+      "nReturned": 100,
+      "executionTimeMillis": 6,
+      "totalKeysExamined": 100,
+      "totalDocsExamined": 100,
+      "executionStages": {
+        "stage": "SINGLE_SHARD",
+        "nReturned": 100,
+        "executionTimeMillis": 6,
+        "totalKeysExamined": 100,
+        "totalDocsExamined": 100,
+        "totalChildMillis": 6,
+        "shards": [
+          {
+            "shardName": "shardA",
+            "executionSuccess": true,
+            "nReturned": 100,
+            "executionTimeMillis": 6,
+            "totalKeysExamined": 100,
+            "totalDocsExamined": 100,
+            "executionStages": {
+              "isCached": false,
+              "stage": "FETCH",
+              "filter": {
+                "reader_card": {
+                  "$eq": "R20240001"
+                }
+              },
+              "nReturned": 100,
+              "executionTimeMillisEstimate": 0,
+              "works": 102,
+              "advanced": 100,
+              "needTime": 0,
+              "needYield": 0,
+              "saveState": 0,
+              "restoreState": 0,
+              "isEOF": 1,
+              "docsExamined": 100,
+              "alreadyHasObj": 0,
+              "inputStage": {
+                "stage": "IXSCAN",
+                "nReturned": 100,
+                "executionTimeMillisEstimate": 0,
+                "works": 101,
+                "advanced": 100,
+                "needTime": 0,
+                "needYield": 0,
+                "saveState": 0,
+                "restoreState": 0,
+                "isEOF": 1,
+                "keyPattern": {
+                  "reader_card": "hashed"
+                },
+                "indexName": "reader_card_hashed",
+                "isMultiKey": false,
+                "isUnique": false,
+                "isSparse": false,
+                "isPartial": false,
+                "indexVersion": 2,
+                "direction": "forward",
+                "indexBounds": {
+                  "reader_card": [
+                    "[29282448342491341, 29282448342491341]"
+                  ]
+                },
+                "keysExamined": 100,
+                "seeks": 1,
+                "dupsTested": 0,
+                "dupsDropped": 0
+              }
+            }
+          }
+        ]
+      }
+    },
+    "queryShapeHash": "7A70084FF708A9D0D6D96E6EE0F7FA8C740B09B5031FF9C9A2C6E61969FC8A9A",
+    "serverInfo": {
+      "host": "LAPTOP-P4DMTM0L",
+      "port": 28417,
+      "version": "8.0.26",
+      "gitVersion": "a2c24805265db119cc39f2f54e067b4294a4ddd2"
+    },
+    "serverParameters": {
+      "internalQueryFacetBufferSizeBytes": 104857600,
+      "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+      "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+      "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+      "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+      "internalQueryProhibitBlockingMergeOnMongoS": 0,
+      "internalQueryMaxAddToSetBytes": 104857600,
+      "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+      "internalQueryFrameworkControl": "trySbeRestricted",
+      "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+    },
+    "command": {
+      "find": "borrow_logs",
+      "filter": {
+        "reader_card": "R20240001"
+      },
+      "lsid": {
+        "id": {
+          "$binary": {
+            "base64": "9DwN3TxjQxu13oZcrDnsAQ==",
+            "subType": "04"
+          }
+        }
+      },
+      "$clusterTime": {
+        "clusterTime": {
+          "$timestamp": {
+            "t": 1793971332,
+            "i": 13
+          }
+        },
+        "signature": {
+          "hash": {
+            "$binary": {
+              "base64": "avrNI4Qp+/wsNETgpmwfO5qcyb0=",
+              "subType": "00"
+            }
+          },
+          "keyId": 7705048041987768344
+        }
+      },
+      "$db": "smart_library"
+    },
+    "ok": 1.0,
+    "$clusterTime": {
+      "clusterTime": {
+        "$timestamp": {
+          "t": 1793971332,
+          "i": 13
+        }
+      },
+      "signature": {
+        "hash": {
+          "$binary": {
+            "base64": "avrNI4Qp+/wsNETgpmwfO5qcyb0=",
+            "subType": "00"
+          }
+        },
+        "keyId": 7705048041987768344
+      }
+    },
+    "operationTime": {
+      "$timestamp": {
+        "t": 1793971332,
+        "i": 13
+      }
+    }
+  }
+}

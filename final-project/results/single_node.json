@@ -1,0 +1,1237 @@
+{
+  "counts": {
+    "books": 50,
+    "readers": 30,
+    "borrow_logs": 3000
+  },
+  "queries": {
+    "类别价格": {
+      "filter": {
+        "category": "计算机",
+        "price": {
+          "$gte": 50,
+          "$lte": 100
+        }
+      },
+      "count": 8
+    },
+    "多标签": {
+      "filter": {
+        "tags": {
+          "$all": [
+            "编程",
+            "入门"
+          ]
+        }
+      },
+      "count": 1
+    },
+    "书名模糊": {
+      "filter": {
+        "title": {
+          "$regex": "Python",
+          "$options": "i"
+        }
+      },
+      "count": 2
+    },
+    "出版年份": {
+      "filter": {
+        "publish_date": {
+          "$gte": {
+            "$date": "2020-01-01T00:00:00Z"
+          },
+          "$lt": {
+            "$date": "2024-01-01T00:00:00Z"
+          }
+        }
+      },
+      "count": 9
+    },
+    "缺少标签": {
+      "filter": {
+        "tags": {
+          "$exists": false
+        }
+      },
+      "count": 4
+    }
+  },
+  "top_ratings": [
+    {
+      "title": "史记（全十册）",
+      "author": "司马迁",
+      "rating": 4.9
+    },
+    {
+      "title": "活着",
+      "author": "余华",
+      "rating": 4.9
+    },
+    {
+      "title": "哥德尔证明",
+      "author": "道格拉斯·霍斯曼",
+      "rating": 4.8
+    },
+    {
+      "title": "围城",
+      "author": "钱钟书",
+      "rating": 4.8
+    },
+    {
+      "title": "平凡的世界（全三部）",
+      "author": "路遥",
+      "rating": 4.8
+    },
+    {
+      "title": "深入理解计算机系统（第3版）",
+      "author": "Randal E. Bryant",
+      "rating": 4.8
+    },
+    {
+      "title": "人类简史",
+      "author": "尤瓦尔·赫拉利",
+      "rating": 4.7
+    },
+    {
+      "title": "小王子",
+      "author": "安托万·德·圣埃克苏佩里",
+      "rating": 4.7
+    },
+    {
+      "title": "红楼梦",
+      "author": "曹雪芹",
+      "rating": 4.7
+    },
+    {
+      "title": "计算机网络：自顶向下方法",
+      "author": "James F. Kurose",
+      "rating": 4.7
+    }
+  ],
+  "statistics": {
+    "分类统计": [
+      {
+        "_id": "历史",
+        "count": 5,
+        "avg_price": 95.6,
+        "avg_rating": 4.66
+      },
+      {
+        "_id": "外语",
+        "count": 5,
+        "avg_price": 59.0,
+        "avg_rating": 4.32
+      },
+      {
+        "_id": "数学",
+        "count": 6,
+        "avg_price": 40.666666666666664,
+        "avg_rating": 4.433333333333334
+      },
+      {
+        "_id": "文学",
+        "count": 12,
+        "avg_price": 47.01666666666667,
+        "avg_rating": 4.625
+      },
+      {
+        "_id": "经济管理",
+        "count": 7,
+        "avg_price": 90.85714285714286,
+        "avg_rating": 4.3
+      },
+      {
+        "_id": "计算机",
+        "count": 15,
+        "avg_price": 89.53333333333333,
+        "avg_rating": 4.533333333333333
+      }
+    ],
+    "学院前五": [
+      {
+        "_id": "经济管理学院",
+        "count": 500
+      },
+      {
+        "_id": "计算机学院",
+        "count": 500
+      },
+      {
+        "_id": "历史文化学院",
+        "count": 400
+      },
+      {
+        "_id": "外国语学院",
+        "count": 400
+      },
+      {
+        "_id": "数学与统计学院",
+        "count": 400
+      }
+    ],
+    "年月趋势": [
+      {
+        "_id": "2023-01",
+        "count": 86
+      },
+      {
+        "_id": "2023-02",
+        "count": 76
+      },
+      {
+        "_id": "2023-03",
+        "count": 86
+      },
+      {
+        "_id": "2023-04",
+        "count": 82
+      },
+      {
+        "_id": "2023-05",
+        "count": 85
+      },
+      {
+        "_id": "2023-06",
+        "count": 82
+      },
+      {
+        "_id": "2023-07",
+        "count": 85
+      },
+      {
+        "_id": "2023-08",
+        "count": 85
+      },
+      {
+        "_id": "2023-09",
+        "count": 83
+      },
+      {
+        "_id": "2023-10",
+        "count": 85
+      },
+      {
+        "_id": "2023-11",
+        "count": 82
+      },
+      {
+        "_id": "2023-12",
+        "count": 85
+      },
+      {
+        "_id": "2024-01",
+        "count": 85
+      },
+      {
+        "_id": "2024-02",
+        "count": 80
+      },
+      {
+        "_id": "2024-03",
+        "count": 85
+      },
+      {
+        "_id": "2024-04",
+        "count": 82
+      },
+      {
+        "_id": "2024-05",
+        "count": 86
+      },
+      {
+        "_id": "2024-06",
+        "count": 82
+      },
+      {
+        "_id": "2024-07",
+        "count": 85
+      },
+      {
+        "_id": "2024-08",
+        "count": 85
+      },
+      {
+        "_id": "2024-09",
+        "count": 82
+      },
+      {
+        "_id": "2024-10",
+        "count": 85
+      },
+      {
+        "_id": "2024-11",
+        "count": 83
+      },
+      {
+        "_id": "2024-12",
+        "count": 85
+      },
+      {
+        "_id": "2025-01",
+        "count": 85
+      },
+      {
+        "_id": "2025-02",
+        "count": 77
+      },
+      {
+        "_id": "2025-03",
+        "count": 85
+      },
+      {
+        "_id": "2025-04",
+        "count": 82
+      },
+      {
+        "_id": "2025-05",
+        "count": 85
+      },
+      {
+        "_id": "2025-06",
+        "count": 83
+      },
+      {
+        "_id": "2025-07",
+        "count": 85
+      },
+      {
+        "_id": "2025-08",
+        "count": 85
+      },
+      {
+        "_id": "2025-09",
+        "count": 82
+      },
+      {
+        "_id": "2025-10",
+        "count": 85
+      },
+      {
+        "_id": "2025-11",
+        "count": 83
+      },
+      {
+        "_id": "2025-12",
+        "count": 76
+      }
+    ],
+    "借阅前十": [
+      {
+        "_id": "9787020002207",
+        "count": 60,
+        "title": "围城",
+        "location": {
+          "floor": "一楼中文图书区",
+          "shelf": "B-04",
+          "copies": 3
+        }
+      },
+      {
+        "_id": "9787020024759",
+        "count": 60,
+        "title": "边城",
+        "location": {
+          "floor": "一楼中文图书区",
+          "shelf": "B-20",
+          "copies": 1
+        }
+      },
+      {
+        "_id": "9787020042033",
+        "count": 60,
+        "title": "红楼梦",
+        "location": {
+          "floor": "一楼中文图书区",
+          "shelf": "B-19",
+          "copies": 1
+        }
+      },
+      {
+        "_id": "9787040396614",
+        "count": 60,
+        "title": "高等数学（上册）",
+        "location": {
+          "floor": "二楼专业图书区",
+          "shelf": "D-15",
+          "copies": 3
+        }
+      },
+      {
+        "_id": "9787040396621",
+        "count": 60,
+        "title": "线性代数（第6版）",
+        "location": {
+          "floor": "二楼专业图书区",
+          "shelf": "D-08",
+          "copies": 3
+        }
+      },
+      {
+        "_id": "9787040405241",
+        "count": 60,
+        "title": "数学之美",
+        "location": {
+          "floor": "二楼专业图书区",
+          "shelf": "D-04",
+          "copies": 3
+        }
+      },
+      {
+        "_id": "9787101003048",
+        "count": 60,
+        "title": "史记（全十册）",
+        "location": {
+          "floor": "一楼中文图书区",
+          "shelf": "F-01",
+          "copies": 2
+        }
+      },
+      {
+        "_id": "9787108009821",
+        "count": 60,
+        "title": "中国通史",
+        "location": {
+          "floor": "一楼中文图书区",
+          "shelf": "F-10",
+          "copies": 2
+        }
+      },
+      {
+        "_id": "9787111407010",
+        "count": 60,
+        "title": "代码整洁之道",
+        "location": {
+          "floor": "二楼专业图书区",
+          "shelf": "A-05",
+          "copies": 3
+        }
+      },
+      {
+        "_id": "9787111544937",
+        "count": 60,
+        "title": "计算机网络：自顶向下方法",
+        "location": {
+          "floor": "二楼专业图书区",
+          "shelf": "A-02",
+          "copies": 1
+        }
+      }
+    ]
+  },
+  "category_stats": [
+    {
+      "_id": "历史",
+      "count": 5,
+      "avg_price": 95.6,
+      "avg_rating": 4.66
+    },
+    {
+      "_id": "外语",
+      "count": 5,
+      "avg_price": 59.0,
+      "avg_rating": 4.32
+    },
+    {
+      "_id": "数学",
+      "count": 6,
+      "avg_price": 40.666666666666664,
+      "avg_rating": 4.433333333333334
+    },
+    {
+      "_id": "文学",
+      "count": 12,
+      "avg_price": 47.01666666666667,
+      "avg_rating": 4.625
+    },
+    {
+      "_id": "经济管理",
+      "count": 7,
+      "avg_price": 90.85714285714286,
+      "avg_rating": 4.3
+    },
+    {
+      "_id": "计算机",
+      "count": 15,
+      "avg_price": 89.53333333333333,
+      "avg_rating": 4.533333333333333
+    }
+  ],
+  "plans": [
+    {
+      "query": {
+        "category": "计算机",
+        "price": {
+          "$gte": 50,
+          "$lte": 100
+        }
+      },
+      "before": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "smart_library.books",
+          "parsedQuery": {
+            "$and": [
+              {
+                "category": {
+                  "$eq": "计算机"
+                }
+              },
+              {
+                "price": {
+                  "$lte": 100
+                }
+              },
+              {
+                "price": {
+                  "$gte": 50
+                }
+              }
+            ]
+          },
+          "indexFilterSet": false,
+          "queryHash": "062E9467",
+          "planCacheShapeHash": "062E9467",
+          "planCacheKey": "BDE87FAB",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "COLLSCAN",
+            "filter": {
+              "$and": [
+                {
+                  "category": {
+                    "$eq": "计算机"
+                  }
+                },
+                {
+                  "price": {
+                    "$lte": 100
+                  }
+                },
+                {
+                  "price": {
+                    "$gte": 50
+                  }
+                }
+              ]
+            },
+            "direction": "forward"
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 8,
+          "executionTimeMillis": 0,
+          "totalKeysExamined": 0,
+          "totalDocsExamined": 50,
+          "executionStages": {
+            "isCached": false,
+            "stage": "COLLSCAN",
+            "filter": {
+              "$and": [
+                {
+                  "category": {
+                    "$eq": "计算机"
+                  }
+                },
+                {
+                  "price": {
+                    "$lte": 100
+                  }
+                },
+                {
+                  "price": {
+                    "$gte": 50
+                  }
+                }
+              ]
+            },
+            "nReturned": 8,
+            "executionTimeMillisEstimate": 0,
+            "works": 51,
+            "advanced": 8,
+            "needTime": 42,
+            "needYield": 0,
+            "saveState": 0,
+            "restoreState": 0,
+            "isEOF": 1,
+            "direction": "forward",
+            "docsExamined": 50
+          }
+        },
+        "queryShapeHash": "83799EC53E321B16A66F8435C5F5C2AD8A572AB2021C9EF1E6BFF446B7A2F0BE",
+        "command": {
+          "find": "books",
+          "filter": {
+            "category": "计算机",
+            "price": {
+              "$gte": 50,
+              "$lte": 100
+            }
+          },
+          "$db": "smart_library"
+        },
+        "serverInfo": {
+          "host": "LAPTOP-P4DMTM0L",
+          "port": 28117,
+          "version": "8.0.26",
+          "gitVersion": "a2c24805265db119cc39f2f54e067b4294a4ddd2"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      },
+      "after_hinted": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "smart_library.books",
+          "parsedQuery": {
+            "$and": [
+              {
+                "category": {
+                  "$eq": "计算机"
+                }
+              },
+              {
+                "price": {
+                  "$lte": 100
+                }
+              },
+              {
+                "price": {
+                  "$gte": 50
+                }
+              }
+            ]
+          },
+          "indexFilterSet": false,
+          "queryHash": "062E9467",
+          "planCacheShapeHash": "062E9467",
+          "planCacheKey": "41ABE596",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "FETCH",
+            "inputStage": {
+              "stage": "IXSCAN",
+              "keyPattern": {
+                "category": 1,
+                "price": 1
+              },
+              "indexName": "category_1_price_1",
+              "isMultiKey": false,
+              "multiKeyPaths": {
+                "category": [],
+                "price": []
+              },
+              "isUnique": false,
+              "isSparse": false,
+              "isPartial": false,
+              "indexVersion": 2,
+              "direction": "forward",
+              "indexBounds": {
+                "category": [
+                  "[\"计算机\", \"计算机\"]"
+                ],
+                "price": [
+                  "[50, 100]"
+                ]
+              }
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 8,
+          "executionTimeMillis": 7,
+          "totalKeysExamined": 8,
+          "totalDocsExamined": 8,
+          "executionStages": {
+            "isCached": false,
+            "stage": "FETCH",
+            "nReturned": 8,
+            "executionTimeMillisEstimate": 0,
+            "works": 9,
+            "advanced": 8,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 0,
+            "restoreState": 0,
+            "isEOF": 1,
+            "docsExamined": 8,
+            "alreadyHasObj": 0,
+            "inputStage": {
+              "stage": "IXSCAN",
+              "nReturned": 8,
+              "executionTimeMillisEstimate": 0,
+              "works": 9,
+              "advanced": 8,
+              "needTime": 0,
+              "needYield": 0,
+              "saveState": 0,
+              "restoreState": 0,
+              "isEOF": 1,
+              "keyPattern": {
+                "category": 1,
+                "price": 1
+              },
+              "indexName": "category_1_price_1",
+              "isMultiKey": false,
+              "multiKeyPaths": {
+                "category": [],
+                "price": []
+              },
+              "isUnique": false,
+              "isSparse": false,
+              "isPartial": false,
+              "indexVersion": 2,
+              "direction": "forward",
+              "indexBounds": {
+                "category": [
+                  "[\"计算机\", \"计算机\"]"
+                ],
+                "price": [
+                  "[50, 100]"
+                ]
+              },
+              "keysExamined": 8,
+              "seeks": 1,
+              "dupsTested": 0,
+              "dupsDropped": 0
+            }
+          }
+        },
+        "queryShapeHash": "83799EC53E321B16A66F8435C5F5C2AD8A572AB2021C9EF1E6BFF446B7A2F0BE",
+        "command": {
+          "find": "books",
+          "filter": {
+            "category": "计算机",
+            "price": {
+              "$gte": 50,
+              "$lte": 100
+            }
+          },
+          "hint": "category_1_price_1",
+          "$db": "smart_library"
+        },
+        "serverInfo": {
+          "host": "LAPTOP-P4DMTM0L",
+          "port": 28117,
+          "version": "8.0.26",
+          "gitVersion": "a2c24805265db119cc39f2f54e067b4294a4ddd2"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      },
+      "note": "after uses explicit index hint; small dataset may naturally favor COLLSCAN"
+    },
+    {
+      "query": {
+        "publish_date": {
+          "$gte": {
+            "$date": "2020-01-01T00:00:00Z"
+          },
+          "$lt": {
+            "$date": "2024-01-01T00:00:00Z"
+          }
+        }
+      },
+      "before": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "smart_library.books",
+          "parsedQuery": {
+            "$and": [
+              {
+                "publish_date": {
+                  "$lt": {
+                    "$date": "2024-01-01T00:00:00Z"
+                  }
+                }
+              },
+              {
+                "publish_date": {
+                  "$gte": {
+                    "$date": "2020-01-01T00:00:00Z"
+                  }
+                }
+              }
+            ]
+          },
+          "indexFilterSet": false,
+          "queryHash": "FF951ACC",
+          "planCacheShapeHash": "FF951ACC",
+          "planCacheKey": "26D6B824",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "COLLSCAN",
+            "filter": {
+              "$and": [
+                {
+                  "publish_date": {
+                    "$lt": {
+                      "$date": "2024-01-01T00:00:00Z"
+                    }
+                  }
+                },
+                {
+                  "publish_date": {
+                    "$gte": {
+                      "$date": "2020-01-01T00:00:00Z"
+                    }
+                  }
+                }
+              ]
+            },
+            "direction": "forward"
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 9,
+          "executionTimeMillis": 0,
+          "totalKeysExamined": 0,
+          "totalDocsExamined": 50,
+          "executionStages": {
+            "isCached": false,
+            "stage": "COLLSCAN",
+            "filter": {
+              "$and": [
+                {
+                  "publish_date": {
+                    "$lt": {
+                      "$date": "2024-01-01T00:00:00Z"
+                    }
+                  }
+                },
+                {
+                  "publish_date": {
+                    "$gte": {
+                      "$date": "2020-01-01T00:00:00Z"
+                    }
+                  }
+                }
+              ]
+            },
+            "nReturned": 9,
+            "executionTimeMillisEstimate": 0,
+            "works": 51,
+            "advanced": 9,
+            "needTime": 41,
+            "needYield": 0,
+            "saveState": 0,
+            "restoreState": 0,
+            "isEOF": 1,
+            "direction": "forward",
+            "docsExamined": 50
+          }
+        },
+        "queryShapeHash": "DDCF6C0E8BEE5D71D5AAFABDD46320274112B40ADAF9DB9746CE2FD2E3D6BD6A",
+        "command": {
+          "find": "books",
+          "filter": {
+            "publish_date": {
+              "$gte": {
+                "$date": "2020-01-01T00:00:00Z"
+              },
+              "$lt": {
+                "$date": "2024-01-01T00:00:00Z"
+              }
+            }
+          },
+          "$db": "smart_library"
+        },
+        "serverInfo": {
+          "host": "LAPTOP-P4DMTM0L",
+          "port": 28117,
+          "version": "8.0.26",
+          "gitVersion": "a2c24805265db119cc39f2f54e067b4294a4ddd2"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      },
+      "after_hinted": {
+        "explainVersion": "1",
+        "queryPlanner": {
+          "namespace": "smart_library.books",
+          "parsedQuery": {
+            "$and": [
+              {
+                "publish_date": {
+                  "$lt": {
+                    "$date": "2024-01-01T00:00:00Z"
+                  }
+                }
+              },
+              {
+                "publish_date": {
+                  "$gte": {
+                    "$date": "2020-01-01T00:00:00Z"
+                  }
+                }
+              }
+            ]
+          },
+          "indexFilterSet": false,
+          "queryHash": "FF951ACC",
+          "planCacheShapeHash": "FF951ACC",
+          "planCacheKey": "67BC2FBE",
+          "optimizationTimeMillis": 0,
+          "maxIndexedOrSolutionsReached": false,
+          "maxIndexedAndSolutionsReached": false,
+          "maxScansToExplodeReached": false,
+          "prunedSimilarIndexes": false,
+          "winningPlan": {
+            "isCached": false,
+            "stage": "FETCH",
+            "inputStage": {
+              "stage": "IXSCAN",
+              "keyPattern": {
+                "publish_date": 1
+              },
+              "indexName": "publish_date_1",
+              "isMultiKey": false,
+              "multiKeyPaths": {
+                "publish_date": []
+              },
+              "isUnique": false,
+              "isSparse": false,
+              "isPartial": false,
+              "indexVersion": 2,
+              "direction": "forward",
+              "indexBounds": {
+                "publish_date": [
+                  "[new Date(1577836800000), new Date(1704067200000))"
+                ]
+              }
+            }
+          },
+          "rejectedPlans": []
+        },
+        "executionStats": {
+          "executionSuccess": true,
+          "nReturned": 9,
+          "executionTimeMillis": 5,
+          "totalKeysExamined": 9,
+          "totalDocsExamined": 9,
+          "executionStages": {
+            "isCached": false,
+            "stage": "FETCH",
+            "nReturned": 9,
+            "executionTimeMillisEstimate": 0,
+            "works": 10,
+            "advanced": 9,
+            "needTime": 0,
+            "needYield": 0,
+            "saveState": 0,
+            "restoreState": 0,
+            "isEOF": 1,
+            "docsExamined": 9,
+            "alreadyHasObj": 0,
+            "inputStage": {
+              "stage": "IXSCAN",
+              "nReturned": 9,
+              "executionTimeMillisEstimate": 0,
+              "works": 10,
+              "advanced": 9,
+              "needTime": 0,
+              "needYield": 0,
+              "saveState": 0,
+              "restoreState": 0,
+              "isEOF": 1,
+              "keyPattern": {
+                "publish_date": 1
+              },
+              "indexName": "publish_date_1",
+              "isMultiKey": false,
+              "multiKeyPaths": {
+                "publish_date": []
+              },
+              "isUnique": false,
+              "isSparse": false,
+              "isPartial": false,
+              "indexVersion": 2,
+              "direction": "forward",
+              "indexBounds": {
+                "publish_date": [
+                  "[new Date(1577836800000), new Date(1704067200000))"
+                ]
+              },
+              "keysExamined": 9,
+              "seeks": 1,
+              "dupsTested": 0,
+              "dupsDropped": 0
+            }
+          }
+        },
+        "queryShapeHash": "DDCF6C0E8BEE5D71D5AAFABDD46320274112B40ADAF9DB9746CE2FD2E3D6BD6A",
+        "command": {
+          "find": "books",
+          "filter": {
+            "publish_date": {
+              "$gte": {
+                "$date": "2020-01-01T00:00:00Z"
+              },
+              "$lt": {
+                "$date": "2024-01-01T00:00:00Z"
+              }
+            }
+          },
+          "hint": "publish_date_1",
+          "$db": "smart_library"
+        },
+        "serverInfo": {
+          "host": "LAPTOP-P4DMTM0L",
+          "port": 28117,
+          "version": "8.0.26",
+          "gitVersion": "a2c24805265db119cc39f2f54e067b4294a4ddd2"
+        },
+        "serverParameters": {
+          "internalQueryFacetBufferSizeBytes": 104857600,
+          "internalQueryFacetMaxOutputDocSizeBytes": 104857600,
+          "internalLookupStageIntermediateDocumentMaxSizeBytes": 104857600,
+          "internalDocumentSourceGroupMaxMemoryBytes": 104857600,
+          "internalQueryMaxBlockingSortMemoryUsageBytes": 104857600,
+          "internalQueryProhibitBlockingMergeOnMongoS": 0,
+          "internalQueryMaxAddToSetBytes": 104857600,
+          "internalDocumentSourceSetWindowFieldsMaxMemoryBytes": 104857600,
+          "internalQueryFrameworkControl": "trySbeRestricted",
+          "internalQueryPlannerIgnoreIndexWithCollationForRegex": 1
+        },
+        "ok": 1.0
+      },
+      "note": "after uses explicit index hint; small dataset may naturally favor COLLSCAN"
+    }
+  ],
+  "uploads": [
+    {
+      "filename": "ebook_1.pdf",
+      "bytes": 39837,
+      "sha256": "f4eb722d8cb28098baecdbf1716761ea0bec85ef82124f139d8b9a909fb44982"
+    },
+    {
+      "filename": "ebook_2.pdf",
+      "bytes": 38524,
+      "sha256": "3ab077c4635dab0fb58fb3f46530c8d8d92a9db21e1beeddf64e4bd904d33a66"
+    },
+    {
+      "filename": "ebook_3.pdf",
+      "bytes": 37004,
+      "sha256": "490485d6ca6a7cf0ba1fe69911526bd00398cb20e0a0a075d53b3f4325ce0fdb"
+    },
+    {
+      "filename": "cover_1.png",
+      "bytes": 23611,
+      "sha256": "54f19fc0a1984b880a4833a9c56d974ac80e08ab36d8beb3480566775993cd19"
+    },
+    {
+      "filename": "cover_2.png",
+      "bytes": 26053,
+      "sha256": "350448ceb7d6c0b6a7a7b03b08b36e4fe0291f9d7b7475412263b4812a81aad9"
+    },
+    {
+      "filename": "cover_3.png",
+      "bytes": 15171,
+      "sha256": "b3a36c3421bada9cb4abe80f7c5fa689d7297a40cc5b2b022e1fe953cd28f307"
+    }
+  ],
+  "files": [
+    {
+      "_id": {
+        "$oid": "6aedd3ee75338b33a25d9337"
+      },
+      "filename": "ebook_1.pdf",
+      "metadata": {
+        "isbn": "9787115428028",
+        "type": "pdf",
+        "original_name": "ebook_1.pdf",
+        "sha256": "f4eb722d8cb28098baecdbf1716761ea0bec85ef82124f139d8b9a909fb44982"
+      },
+      "length": 39837,
+      "uploadDate": {
+        "$date": "2026-11-06T13:19:42.208Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ee75338b33a25d933a"
+      },
+      "filename": "ebook_2.pdf",
+      "metadata": {
+        "isbn": "9787121362726",
+        "type": "pdf",
+        "original_name": "ebook_2.pdf",
+        "sha256": "3ab077c4635dab0fb58fb3f46530c8d8d92a9db21e1beeddf64e4bd904d33a66"
+      },
+      "length": 38524,
+      "uploadDate": {
+        "$date": "2026-11-06T13:19:42.211Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ee75338b33a25d933d"
+      },
+      "filename": "ebook_3.pdf",
+      "metadata": {
+        "isbn": "9787115546081",
+        "type": "pdf",
+        "original_name": "ebook_3.pdf",
+        "sha256": "490485d6ca6a7cf0ba1fe69911526bd00398cb20e0a0a075d53b3f4325ce0fdb"
+      },
+      "length": 37004,
+      "uploadDate": {
+        "$date": "2026-11-06T13:19:42.213Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ee75338b33a25d9340"
+      },
+      "filename": "cover_1.png",
+      "metadata": {
+        "isbn": "9787115428028",
+        "type": "png",
+        "original_name": "cover_1.png",
+        "sha256": "54f19fc0a1984b880a4833a9c56d974ac80e08ab36d8beb3480566775993cd19"
+      },
+      "length": 23611,
+      "uploadDate": {
+        "$date": "2026-11-06T13:19:42.216Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ee75338b33a25d9343"
+      },
+      "filename": "cover_2.png",
+      "metadata": {
+        "isbn": "9787121362726",
+        "type": "png",
+        "original_name": "cover_2.png",
+        "sha256": "350448ceb7d6c0b6a7a7b03b08b36e4fe0291f9d7b7475412263b4812a81aad9"
+      },
+      "length": 26053,
+      "uploadDate": {
+        "$date": "2026-11-06T13:19:42.219Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "6aedd3ee75338b33a25d9346"
+      },
+      "filename": "cover_3.png",
+      "metadata": {
+        "isbn": "9787115546081",
+        "type": "png",
+        "original_name": "cover_3.png",
+        "sha256": "b3a36c3421bada9cb4abe80f7c5fa689d7297a40cc5b2b022e1fe953cd28f307"
+      },
+      "length": 15171,
+      "uploadDate": {
+        "$date": "2026-11-06T13:19:42.221Z"
+      }
+    }
+  ],
+  "downloads": [
+    {
+      "filename": "ebook_1.pdf",
+      "bytes": 39837,
+      "sha256": "f4eb722d8cb28098baecdbf1716761ea0bec85ef82124f139d8b9a909fb44982",
+      "verified": true
+    },
+    {
+      "filename": "ebook_2.pdf",
+      "bytes": 38524,
+      "sha256": "3ab077c4635dab0fb58fb3f46530c8d8d92a9db21e1beeddf64e4bd904d33a66",
+      "verified": true
+    },
+    {
+      "filename": "ebook_3.pdf",
+      "bytes": 37004,
+      "sha256": "490485d6ca6a7cf0ba1fe69911526bd00398cb20e0a0a075d53b3f4325ce0fdb",
+      "verified": true
+    }
+  ],
+  "all_six_verified": [
+    {
+      "filename": "ebook_1.pdf",
+      "bytes": 39837,
+      "sha256": "f4eb722d8cb28098baecdbf1716761ea0bec85ef82124f139d8b9a909fb44982"
+    },
+    {
+      "filename": "ebook_2.pdf",
+      "bytes": 38524,
+      "sha256": "3ab077c4635dab0fb58fb3f46530c8d8d92a9db21e1beeddf64e4bd904d33a66"
+    },
+    {
+      "filename": "ebook_3.pdf",
+      "bytes": 37004,
+      "sha256": "490485d6ca6a7cf0ba1fe69911526bd00398cb20e0a0a075d53b3f4325ce0fdb"
+    },
+    {
+      "filename": "cover_1.png",
+      "bytes": 23611,
+      "sha256": "54f19fc0a1984b880a4833a9c56d974ac80e08ab36d8beb3480566775993cd19"
+    },
+    {
+      "filename": "cover_2.png",
+      "bytes": 26053,
+      "sha256": "350448ceb7d6c0b6a7a7b03b08b36e4fe0291f9d7b7475412263b4812a81aad9"
+    },
+    {
+      "filename": "cover_3.png",
+      "bytes": 15171,
+      "sha256": "b3a36c3421bada9cb4abe80f7c5fa689d7297a40cc5b2b022e1fe953cd28f307"
+    }
+  ]
+}

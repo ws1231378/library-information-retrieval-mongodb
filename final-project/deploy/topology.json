@@ -1,0 +1,42 @@
+{
+  "bindIp": "127.0.0.1",
+  "standalone": {
+    "port": 28117,
+    "dbPath": "runtime/db",
+    "auth": true,
+    "note": "最终验收时以 --auth 启动，账号见 README 第 2 节"
+  },
+  "replicaSet": {
+    "name": "libraryRS",
+    "ports": [
+      28217,
+      28218,
+      28219
+    ],
+    "directory": "runtime/replica/<port>",
+    "auth": true,
+    "keyFile": "C:\\ProgramData\\mongo_lab\\keyfile_merged"
+  },
+  "sharding": {
+    "configRS": [
+      28300
+    ],
+    "shardA": [
+      28301
+    ],
+    "shardB": [
+      28302
+    ],
+    "mongos": 28417,
+    "directory": "runtime/sharding/<port>",
+    "auth": true,
+    "collection": "smart_library.borrow_logs",
+    "key": {
+      "reader_card": "hashed"
+    },
+    "initialChunks": 4,
+    "keyFile": "C:\\ProgramData\\mongo_lab\\keyfile_shard"
+  },
+  "reviewWeb": 28780,
+  "note": "One-host teaching topology. Passwords and keyfiles are generated locally and excluded from submission."
+}

@@ -1,5 +1,16 @@
 # 图书情报检索与统计平台
 
+## 期末项目 智慧图书馆数字资源平台
+
+本次期末项目交付物已放入 [final-project](final-project/README.md)，不含答辩材料。
+
+- [完整实验报告 Word（公开版）](final-project/deliverables/实验报告-公开版.docx)
+- [项目技术文档 Word](final-project/deliverables/智慧图书馆数字资源平台项目文档（含补充验收）.docx)
+- [源码及运行说明](final-project/) · [原始数据](final-project/data/) · [运行记录与截图](final-project/results/)
+
+下方保留上次实训作业内容。
+
+
 公开版本已去除作者的姓名、学号、班级及文档个人元数据。实名提交版单独保存在本地。
 
 本项目包含任务书六项任务的程序、数据、实测记录、Compass 核对截图，以及第3章上机练习的独立脚本和完成记录。报告在 `deliverables`，截图说明在 `results/截图与证据索引.md`。实验于2026年10月20日开始，后续补齐图形化核对与交付材料。

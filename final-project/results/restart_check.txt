@@ -1,0 +1,18 @@
+=== 干净环境：停止后重启验证（deploy/restart_lab.py） ===
+日期：2026-11-06
+
+启动输出：
+28217/28218/28219: already listening; left untouched
+28300: started PID 39660
+28301: started PID 40368
+28302: started PID 38844
+28417: started PID 38480
+
+通过 mongos（28417）使用 runtime/sharding/connection.txt 查询：
+  borrow_logs = 3000
+  books = 50
+  shards = ['shardA', 'shardB']
+  ping = 1.0
+
+结论：全新 runtime + 全新 keyFile 下初始化后，restart_lab.py 依据 connection.txt
+正确启动 mongos，28417 路由可用；分片与副本集数据均可查询。

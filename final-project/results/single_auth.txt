@@ -1,0 +1,12 @@
+=== 单机（28117）认证与权限 ===
+管理员密码来源：随机生成，已写入 runtime/single_auth_password.txt
+已创建 labAdmin（root）
+已创建 libReader：[{'role': 'read', 'db': 'smart_library'}]
+已创建 libWriter：[{'role': 'readWrite', 'db': 'smart_library'}]
+[匿名]
+  被拒绝 code=13
+[libReader]
+  books 读取：50 条
+  写入被拒绝 code=13
+[libWriter]
+  audit_logs 写入成功，当前 12 条
