@@ -1,111 +1,133 @@
 # 图书情报检索与统计平台
 
-## 期末项目 智慧图书馆数字资源平台
+《数据库管理系统》课程作业仓库。期末项目放在 `final-project/`，上次实训的程序和材料保留在根目录。
 
-本次期末项目交付物已放入 [final-project](final-project/README.md)。
+## 期末项目：智慧图书馆数字资源平台
+
+班级：24数科3班　学号：202414870324　姓名：王睿昌
 
 - [完整实验报告 Word](final-project/deliverables/24数科3班-202414870324-王睿昌.docx)
 - [项目技术文档 Word](final-project/deliverables/智慧图书馆数字资源平台项目文档（含补充验收）.docx)
-- [源码及运行说明](final-project/) · [原始数据](final-project/data/) · [运行记录与截图](final-project/results/)
+- [项目说明与运行步骤](final-project/README.md)
+- [源代码](final-project/) · [原始数据](final-project/data/) · [运行记录与截图](final-project/results/)
 
-下方保留上次实训作业内容。
+## 上次实训：图书情报检索与统计平台
 
+上次实训从 2026 年 10 月 20 日开始，完成了任务书的六项任务和第 3 章上机练习。以下材料与运行步骤均对应上次实训，期末项目请查看上方链接。
 
-下方为上次实训作业的公开版本，保留原有匿名报告；本次期末项目的两份文档已填写班级、学号、姓名，见上方入口。
-
-本项目包含任务书六项任务的程序、数据、实测记录、Compass 核对截图，以及第3章上机练习的独立脚本和完成记录。报告在 `deliverables`，截图说明在 `results/截图与证据索引.md`。实验于2026年10月20日开始，后续补齐图形化核对与交付材料。
-
-## 提交材料入口
+### 材料入口
 
 - [实验报告 Word](deliverables/实验报告-公开版.docx)
-- [技术文档 Word（4页）](deliverables/图书情报检索与统计平台技术文档.docx)
+- [技术文档 Word（4 页）](deliverables/图书情报检索与统计平台技术文档.docx)
 - [三份原始数据 TXT](data/)
 - 六个主程序：[连接](mongodb_connect.py)、[图书管理](book_manager.py)、[读者管理](reader_manager.py)、[借还管理](borrow_manager.py)、[统计](stat_manager.py)、[主菜单](main.py)
-- [覆盖六项任务的截图索引](results/截图与证据索引.md) · [14张运行截图](results/screenshots/)
-- [全部实测命令与结果](results/完整命令与实测结果.md)
+- [截图说明](results/截图与证据索引.md) · [14 张运行截图](results/screenshots/)
+- [实验命令与运行结果](results/完整命令与实测结果.md)
 
-课程：《数据库管理系统》；项目：图书情报检索与统计平台。六个主程序配合运行，初始化与验收辅助脚本位于 `scripts/`。
+### 测试结果
 
-## 已验证结果
+- 原始数据为 20 本图书、16 位读者、66 条借阅记录；在库视图返回 19 本图书，分类统计返回 5 组。
+- 已执行 Q1 至 Q16、U1 至 U4、D1 至 D3、A1 至 A9。更新和删除练习结束后恢复了原始数据。
+- 34 项集成检查通过，包括零库存、重复 ISBN、读者不存在和重复归还等情况。
+- 启用 `--auth` 后，匿名访问被拒绝；只读账号可读取 20 本图书，写入返回错误码 13；读写账号写入成功。
+- 在 Compass 中检查了 Q1、Q2、Q7、Q14、A1 和在库视图，结果与脚本一致。
 
-- 原始基线：books 20、readers 16、borrow_logs 66；在库视图19，分类统计5组。
-- Q1—Q16、U1—U4、D1—D3、A1—A9 均有真实数据库返回值；修改性练习执行后恢复原始数据。
-- 34项真实数据库集成检查全部通过，包括零库存、重复ISBN、重复归还、读者不存在等边界。
-- --auth 已启用：匿名读被拒绝，只读用户可读20本图书但写入被拒绝，错误码13；读写用户写入成功。
-- Compass 独立核对 Q1、Q2、Q7、Q14、A1 和在库视图，全部一致。
+### 文件说明
 
-## 文件说明
+| 路径 | 内容 |
+| --- | --- |
+| 根目录六个 `.py` 文件 | 连接、图书、读者、借还、统计和主菜单 |
+| `data/*.txt` | 三份原始 Extended JSON 数据 |
+| `scripts/init_data.py` | 建库、导入数据、创建索引和视图 |
+| `scripts/exercises.py` | 查询、更新、删除、聚合和索引练习 |
+| `scripts/queries.js`、`scripts/mutations.js` | mongosh 命令，其中 mutations.js 会修改数据 |
+| `scripts/create_users.js` | 创建三个账号，密码由交互输入 |
+| `scripts/manual_practice.py` | 第 3 章上机练习，使用独立数据库 |
+| `scripts/test_integration.py` | 集成检查，使用独立测试库 |
+| `results/完整命令与实测结果.md` | 实验命令及返回结果 |
+| `results/第3章上机练习完成记录.md` | 上机练习完成情况 |
+| `results/menu_session.txt`、`results/tests.json`、`results/security.json` | 菜单运行、集成检查和权限测试记录 |
+| `results/*.json` | 数据导出及其他运行记录 |
+| `results/screenshots/` | 运行截图，具体内容见截图说明 |
+| `deliverables/` | 模板实验报告和 4 页技术文档 |
 
-|路径|内容|
-|---|---|
-|根目录六个 `.py`|连接、图书、读者、借还、统计、主菜单|
-|`data/*.txt`|用户提供的三份原始 Extended JSON 数据|
-|`scripts/init_data.py`|创建集合、导入数据、索引与视图|
-|`scripts/exercises.py`|项目全部查询、更新删除、聚合与索引实测|
-|`scripts/queries.js`、`mutations.js`|对应 mongosh 命令；后者会修改数据|
-|`scripts/create_users.js`|交互输入密码创建三个账号|
-|`scripts/manual_practice.py`|第3章上机练习，独立练习库|
-|`scripts/test_integration.py`|独立测试库的集成验收|
-|`results/完整命令与实测结果.md`|完整命令及实际返回值|
-|`results/第3章上机练习完成记录.md`|手册逐项练习与说明|
-|`results/menu_session.txt`、`tests.json`、`security.json`|真实程序输出、检查和权限结果|
-|`results/*.json`|数据导出与机器可读结果|
-|`results/screenshots`|真实窗口截图；以索引说明来源|
-|`deliverables`|模板版实验报告、4页技术文档|
+### 在原实验电脑上运行
 
-## 原实验电脑继续运行（不适用于新下载的仓库）
+原实验目录的 `runtime/` 中保留了 MongoDB 8.0.26、Compass 1.50.0、数据库文件和本地凭据。这些文件没有上传到仓库。新下载项目请按下一节配置环境。
 
-原实验电脑的工作目录保留了专用 MongoDB 8.0.26、Compass 1.50.0、数据库文件和本地随机凭据。它们放在 `runtime`，不进入提交压缩包或公开仓库。新下载本仓库请使用下方“在新电脑复现”步骤。原实验电脑关闭服务后，可在项目目录的 PowerShell 窗口运行：
+在原实验目录打开 PowerShell，启动数据库：
 
 ```powershell
 .\start_server.ps1 -Auth
 ```
 
-保持该窗口运行，在另一窗口启动菜单：
+保持这个窗口运行，再开一个 PowerShell 窗口启动菜单：
 
 ```powershell
 .\run_local.ps1
 ```
 
-如果端口27017已有本项目实例运行，不重复启动。`run_local.ps1` 只在存在本地凭据文件时自动使用 libWriter；不在屏幕输出密码。
+如果本项目的数据库已在 27017 端口运行，就不必再次启动。`run_local.ps1` 读取本地凭据后使用 libWriter 连接，不会在终端显示密码。
 
-## 在新电脑复现
+### 在新电脑上运行
 
-1. 安装 Python 3.9以上（本次实际3.12）、MongoDB Community 8.0和 mongosh。Compass用于图形化核对。PyCharm可直接打开本目录并选择已安装 PyMongo 的解释器；本次代码通过命令行执行，没有把 PyCharm 安装过程当作实测。
-2. 进入解压后的项目目录，运行 `python -m pip install -r requirements.txt`。
-3. 在新建的专用实例启动数据库：`./start_server.ps1 -MongoBin '实际的mongod.exe完整路径'`。该脚本自定义数据目录并仅监听本机27017。初次建库阶段不带 `-Auth`。
-4. 在另一个窗口运行以下命令。初次导入要求目标库为空；`--reset` 只能重置已有本项目标记的库，不要对有需保留改动的库使用。
+1. 安装 Python 3.9 或更高版本、MongoDB Community 8.0 和 mongosh。实验使用的是 Python 3.12。需要图形化查看数据时，另外安装 Compass。也可以用 PyCharm 打开项目，选择装有 PyMongo 的解释器。
+2. 在项目根目录安装依赖：
 
-```powershell
-python scripts/init_data.py
-python scripts/exercises.py
-python scripts/manual_practice.py
-python scripts/test_integration.py
-mongosh --host 127.0.0.1 --port 27017 --file scripts/create_users.js
-```
+   ```powershell
+   python -m pip install -r requirements.txt
+   ```
 
-5. 用 Ctrl+C 正常停止刚才启动的专用实例，然后运行 `./start_server.ps1 -Auth -MongoBin '实际的mongod.exe完整路径'`。
-6. 在应用窗口设置账号，密码由程序提示输入，不写在命令行中：
+3. 启动数据库。脚本会使用独立数据目录，只监听本机 27017 端口。首次导入时不加 `-Auth`：
 
-```powershell
-$env:MONGO_USER='libWriter'
-$env:MONGO_AUTH_DB='library'
-python main.py
-```
+   ```powershell
+   .\start_server.ps1 -MongoBin 'mongod.exe的完整路径'
+   ```
 
-7. Compass连接 `mongodb://127.0.0.1:27017/library`，Authentication填写用户及其密码，认证库为library。只读验证使用libReader。连接收藏和导出方法见截图索引。
+4. 在另一个 PowerShell 窗口依次运行：
 
-已启用认证后重跑练习和测试，需要具有创建练习库权限的维护账号：设置 `MONGO_USER=labAdmin`、`MONGO_AUTH_DB=admin`，再按提示输入密码。重跑更新删除练习前应先备份自己的新增数据。
+   ```powershell
+   python scripts/init_data.py
+   python scripts/exercises.py
+   python scripts/manual_practice.py
+   python scripts/test_integration.py
+   mongosh --host 127.0.0.1 --port 27017 --file scripts/create_users.js
+   ```
 
-## 数据与实现说明
+   首次导入要求目标库为空。`--reset` 仅用于带有本项目标记的实训库；已有需要保留的数据时，先备份再操作。
 
-- 原始日期保留为 BSON Date。统计明确使用 Asia/Shanghai。样例跨2023—2025年，专用实训实例默认暂停 TTL 线程，集合仍配置63072000秒过期；加 `-EnableTTL` 会重新启用清理并可能删掉历史样例。
-- 时间序列集合 borrow_logs 的 status 更新实测受到限制（code72），所以新增普通集合 borrow_records 保存实时借还状态。MongoDB 8.0.26 的时间序列 delete_one 实测成功。
-- 借还采取条件原子更新和异常补偿，防止负库存与重复归还；跨集合不是完整事务，进程突然终止仍可能造成不一致，适用于本课程单机演示。
-- 源数据累计 borrow_count 与66条样例流水统计口径不同；程序分别提供累计借阅榜和流水热门榜。
-- 手册未完整提供部分样例时，练习脚本明确标注重建的用户字段及自构造订单数据，不把它们声称为原始附件。
-- Windows是实际部署路线；Linux/FinalShell是手册替代路线，未虚构相应安装截图。软件使用项目内便携环境，没有更改系统全局 PATH。
+5. 用 Ctrl+C 停止数据库，再启用认证：
 
-## 提交与核验
+   ```powershell
+   .\start_server.ps1 -Auth -MongoBin 'mongod.exe的完整路径'
+   ```
 
-上次实训报告保留匿名文件名。模板未提供本次实验序号，保持该项空白。提交压缩包不包含数据库运行目录、软件安装包、密码、缓存或排版中间文件；在新机器复现按上文安装依赖。`SHA256SUMS.txt` 提供每份交付文件的校验值。
+6. 在菜单窗口设置账号并运行程序，密码按提示输入：
+
+   ```powershell
+   $env:MONGO_USER='libWriter'
+   $env:MONGO_AUTH_DB='library'
+   python main.py
+   ```
+
+7. 在 Compass 中连接 `mongodb://127.0.0.1:27017/library`，填写账号、密码，认证库选择 `library`。只读测试使用 libReader，连接收藏和导出操作见截图说明。
+
+启用认证后，如果需要重跑练习和测试，应使用有建库权限的维护账号：将 `MONGO_USER` 设为 `labAdmin`，`MONGO_AUTH_DB` 设为 `admin`。更新和删除练习会改动数据，运行前先备份自己的新增内容。
+
+### 实现说明
+
+日期保存为 BSON Date，统计使用 Asia/Shanghai 时区。样例借阅记录来自 2023 至 2025 年，TTL 设为 63072000 秒。为保留这些历史样例，启动脚本默认暂停 TTL 清理；使用 `-EnableTTL` 后，过期记录可能被删除。
+
+时间序列集合 `borrow_logs` 的状态更新遇到了错误码 72，因此另建普通集合 `borrow_records` 保存当前借还状态。MongoDB 8.0.26 下，时间序列集合的 `delete_one` 测试成功。
+
+借还功能采用条件更新和失败补偿，防止库存变成负数或重复归还增加库存。这个实训版本没有跨集合事务，进程突然退出时仍可能留下不一致的数据。
+
+源数据中的 `borrow_count` 是历史累计值，66 条借阅流水只代表给定样本，因此程序分别提供累计借阅榜和样本流水热门榜。手册中未完整给出的用户字段和订单样例，在练习脚本中标明了补充内容。
+
+本次实验在 Windows 命令行下完成，使用项目目录内的便携软件，没有修改系统全局 PATH。手册中的 Linux 和 FinalShell 路线未在本次实验中执行。
+
+### 提交与校验
+
+上次实训保留匿名报告文件名，实验序号按模板留空。期末项目的两份文档已填写姓名、学号和班级。
+
+数据库运行目录、软件安装包、密码、缓存和排版中间文件不在提交包中。根目录的 `SHA256SUMS.txt` 用于核对上次实训材料；期末项目的校验清单位于 `final-project/results/SHA256SUMS.txt`。
