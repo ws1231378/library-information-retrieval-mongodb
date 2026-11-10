@@ -5,7 +5,7 @@ import zipfile
 from pathlib import Path
 
 ROOT = Path(r"D:\Program Files\Deepseek\作业\智慧图书馆数字资源平台-合并版")
-ZIP = Path(r"D:\Program Files\Deepseek\作业\实验报告-公开版-智慧图书馆数字资源平台.zip")
+ZIP = Path(r"D:\Program Files\Deepseek\作业\24数科3班-202414870324-王睿昌-智慧图书馆数字资源平台.zip")
 SKIP_DIRS = {"runtime", "__pycache__", ".git", "node_modules", "_archive"}
 SKIP_FILES = {"_lab_out.txt", "_extra_out.txt", "_main_fixed.docx"}
 
